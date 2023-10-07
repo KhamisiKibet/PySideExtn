@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="PySide2extn", # Replace with your own username
-    version="1.0.0",
-    author="ANJAL.P",
-    author_email="opensource.anj.official@gmail.com",
-    description="PySide2extn is an Open Source Python Programming language extension for PySide2, which greatly enhances the capability of the PySide2 library with extra widgets and more.",
+    name="PySideExtn", # Replace with your own username
+    version="2.0.0",
+    author="ANJAL.P. Improved by Khamisi Kibet",
+    author_email="spinncompany@gmail.com",
+    description="PySideExtn is an open-source Python programming language extension designed to empower PySide2/6 users with an expanded toolkit. This extension enriches the PySide2/6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/anjalp/PySide2extn",
+    url="https://github.com/KhamisiKibet/PySideExtn",
     packages=setuptools.find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -25,5 +25,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    install_requires=["PySide2"],
+    install_requires=["qtpy"],
 )
