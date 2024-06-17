@@ -35,21 +35,21 @@ RoundProgressBar widget provides a fully customizable round progress bar with 6 
 * [def reset()](#pyside2qtwidgtesroundprogressbarreset)
 * [def setGeometry(posX, posY)](#pyside2qtwidgtesroundprogressbarsetgeometryposx-posy)
 * [def setLineWidth(width)](#pyside2qtwidgtesroundprogressbarsetlinewidthwidth)
-* [def setLineColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsetlinecolorr-g-b)
-* [def setPathColor(QColor(R, G, B))](#pyside2qtwidgtesroundprogressbarsetpathcolorr-g-b)
+* [def setLineColor(QColor)](#pyside2qtwidgtesroundprogressbarsetlinecolorr-g-b)
+* [def setPathColor(QColor)](#pyside2qtwidgtesroundprogressbarsetpathcolorr-g-b)
 * [def setPathWidth(width)](#pyside2qtwidgtesroundprogressbarsetpathwidthwidth)
 * [def setDirection(directionFlag)](#pyside2qtwidgtesroundprogressbarsetdirectiondirectionflag)
 * [def setBarStyle(styleFlag)](#pyside2qtwidgtesroundprogressbarsetbarstylestyleflag)
 * [def setLineStyle(styleFlag)](#pyside2qtwidgtesroundprogressbarsetlinestylelinestyleflags)
 * [def setLineCap(capFlag)](#pyside2qtwidgtesroundprogressbarsetlinecaplinecapflags)
-* [def setTextColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsettextcolorr-g-b)
+* [def setTextColor(QColor)](#pyside2qtwidgtesroundprogressbarsettextcolorr-g-b)
 * [def setTextFont(font)](#pyside2qtwidgtesroundprogressbarsettextfontfontflags)
 * [def setTextFormat(typeFlags)](#pyside2qtwidgtesroundprogressbarsettextformattypeflags)
 * [def setTextRatio(ratio)](#pyside2qtwidgtesroundprogressbarsettextratioratio)
 * [def setTextWidth(width)](#pyside2qtwidgtesroundprogressbarsettextwidthwidth)
-* [def setCircleColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsetcirclecolorr-g-b)
+* [def setCircleColor(QColor)](#pyside2qtwidgtesroundprogressbarsetcirclecolorr-g-b)
 * [def setCircleRatio(ratio)](#pyside2qtwidgtesroundprogressbarsetcircleratioratio)
-* [def setPieColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsetpiecolorr-g-b)
+* [def setPieColor(QColor)](#pyside2qtwidgtesroundprogressbarsetpiecolorr-g-b)
 * [def setPieRatio(ratio)](#pyside2qtwidgtesroundprogressbarsetpieratioratio)
 * [def enbaleText(bool)](#pyside2qtwidgtesroundprogressbarenabletextbool)
 * [def getSize()](#pyside2qtwidgtesroundprogressbargetsize)
@@ -276,17 +276,17 @@ self.rpb.setLineWidth(10)
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setLineColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.setLineColor(QColor)***
 
-**Parameters**: tuple of R, G, B
+**Parameters**: QColor
 
-Changes the color of the line to the specified R, G, B spectrum. 
+Changes the color of the line to the specified QColor. 
 
-By default line color is : (0, 159, 227)
+By default line color is : QColor(0, 159, 227)
 
 ```python
 #CHANGE THE LINE COLOR
-self.rpb.setLineColor((255, 0, 0)) #CHANGING THE LINE COLOR TO RED
+self.rpb.setLineColor(QColor(255, 0, 0)) #CHANGING THE LINE COLOR TO RED
 ```
 
 <p align="center">
@@ -320,9 +320,9 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ### ***PySide2.QtWidgtes.RoundProgressBar.setPathColor(QColor)***
 
-**Parameters**: tuple of R, G, B
+**Parameters**: QColor
 
-Changes the color of the path to the specified R, G, B spectrum. 
+Changes the color of the path to the specified QColor. 
 
 By default path color is : QColor(218, 218, 218)
 
@@ -439,15 +439,15 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setTextColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.setTextColor(QColor)***
 
-**Parameter**: Tuple in the form : R, G, B
+**Parameter**: QColor
 
-Set the text color of your desire with passing a tuple of R, G, B.
+Set the text color of your desire with passing QColor.
 
 ```python
 #TEXT COLOR
-self.rpb.setTextColor((255, 220, 0)) #SETTING THE COLOR TO YELLOW
+self.rpb.setTextColor(QColor(255, 220, 0)) #SETTING THE COLOR TO YELLOW
 ```
 
 <p align="center">
@@ -554,18 +554,18 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setCircleColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.setCircleColor(QColor)***
 
-**Parameters**: Tuple in the form : R, G, B
+**Parameters**: QColor
 
 Changes the color of the circle in the bar style `Pizza` and `Hybrid1`.
 
-Default color is :(218, 218, 218)
+Default color is :QColor(218, 218, 218)
 
 ```python
 #CHANGE THE COLOR OF THE CIRCLE
 self.rpb.setBarStyle('Hybrid1') #CHANGE THE BAR STYLE TO HYBRID
-self.rpb.setCircleColor((200, 120, 20)) #CHANGE THE COLOR
+self.rpb.setCircleColor(QColor(200, 120, 20)) #CHANGE THE COLOR
 ```
 
 <p align="center">
@@ -595,18 +595,18 @@ self.rpb.setCircleRatio(0.5) #MAKES THE CIRCLE 0.5*SIZE OF THE PROGRESS BAR
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setPieColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.setPieColor(QColor)***
 
-**Parameters**: Tuple in the form : R, G, B
+**Parameters**: QColor
 
 Changes the color of the pie in the bar style `Pie` and `Hybrid2`.
 
-Default color is :(218, 218, 218)
+Default color is :QColor(218, 218, 218)
 
 ```python
 #PIE COLOR
 self.rpb.setBarStyle('Pie')
-self.rpb.setPieColor((0, 150, 120))
+self.rpb.setPieColor(QColor(0, 150, 120))
 self.rpb.setValue(45)
 ```
 
