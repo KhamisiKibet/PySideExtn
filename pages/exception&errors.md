@@ -11,7 +11,7 @@ PySideExtn Library uses specific style for parameters passed to the methods. So 
 
 
 
-## Class : roundProgressBar
+## Class : RoundProgressBar
 
 ### Exception
 
@@ -21,7 +21,7 @@ Raised if the data type passed as an argument did not match the required. This e
 
 
 
-## Class : spiralProgressBar
+## Class : SpiralProgressBar
 
 ### Exceptions
 
