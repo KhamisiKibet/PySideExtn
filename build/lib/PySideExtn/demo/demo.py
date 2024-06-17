@@ -17,8 +17,8 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
-from PySideExtn.RoundProgressBar import roundProgressBar
-from PySideExtn.SpiralProgressBar import spiralProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
+from PySideExtn.SpiralProgressBar import SpiralProgressBar
 
 
 class Ui_MainWindow(object):
@@ -61,23 +61,23 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.b3, 0, 5, 1, 1)
 
-        self.rpb4 = roundProgressBar(self.widget)
+        self.rpb4 = RoundProgressBar(self.widget)
         self.rpb4.setObjectName(u"rpb4")
 
         self.gridLayout_2.addWidget(self.rpb4, 0, 6, 3, 1)
 
-        self.rpb3 = roundProgressBar(self.widget)
+        self.rpb3 = RoundProgressBar(self.widget)
         self.rpb3.setObjectName(u"rpb3")
 
         self.gridLayout_2.addWidget(self.rpb3, 0, 4, 3, 1)
 
-        self.rpb2 = roundProgressBar(self.widget)
+        self.rpb2 = RoundProgressBar(self.widget)
         self.rpb2.setObjectName(u"rpb2")
         self.rpb2.setStyleSheet(u"")
 
         self.gridLayout_2.addWidget(self.rpb2, 0, 2, 3, 1)
 
-        self.rpb1 = roundProgressBar(self.widget)
+        self.rpb1 = RoundProgressBar(self.widget)
         self.rpb1.setObjectName(u"rpb1")
 
         self.gridLayout_2.addWidget(self.rpb1, 0, 0, 3, 1)
@@ -145,7 +145,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.b8, 3, 1, 1, 1)
 
-        self.rpb5 = roundProgressBar(self.widget_2)
+        self.rpb5 = RoundProgressBar(self.widget_2)
         self.rpb5.setObjectName(u"rpb5")
 
         self.gridLayout_3.addWidget(self.rpb5, 0, 0, 4, 1)
@@ -157,17 +157,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.b7, 0, 1, 1, 1)
 
-        self.rpb7 = roundProgressBar(self.widget_2)
+        self.rpb7 = RoundProgressBar(self.widget_2)
         self.rpb7.setObjectName(u"rpb7")
 
         self.gridLayout_3.addWidget(self.rpb7, 0, 4, 4, 1)
 
-        self.rpb8 = roundProgressBar(self.widget_2)
+        self.rpb8 = RoundProgressBar(self.widget_2)
         self.rpb8.setObjectName(u"rpb8")
 
         self.gridLayout_3.addWidget(self.rpb8, 0, 6, 4, 1)
 
-        self.rpb6 = roundProgressBar(self.widget_2)
+        self.rpb6 = RoundProgressBar(self.widget_2)
         self.rpb6.setObjectName(u"rpb6")
 
         self.gridLayout_3.addWidget(self.rpb6, 0, 2, 4, 1)
@@ -215,17 +215,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.vs3, 0, 3, 4, 1)
 
-        self.spb2 = spiralProgressBar(self.widget_3)
+        self.spb2 = SpiralProgressBar(self.widget_3)
         self.spb2.setObjectName(u"spb2")
 
         self.gridLayout_4.addWidget(self.spb2, 0, 2, 4, 1)
 
-        self.spb1 = spiralProgressBar(self.widget_3)
+        self.spb1 = SpiralProgressBar(self.widget_3)
         self.spb1.setObjectName(u"spb1")
 
         self.gridLayout_4.addWidget(self.spb1, 0, 0, 4, 1)
 
-        self.spb3 = spiralProgressBar(self.widget_3)
+        self.spb3 = SpiralProgressBar(self.widget_3)
         self.spb3.setObjectName(u"spb3")
 
         self.gridLayout_4.addWidget(self.spb3, 0, 4, 4, 1)
@@ -237,7 +237,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.pushButton_12, 3, 5, 1, 1)
 
-        self.spb4 = spiralProgressBar(self.widget_3)
+        self.spb4 = SpiralProgressBar(self.widget_3)
         self.spb4.setObjectName(u"spb4")
 
         self.gridLayout_4.addWidget(self.spb4, 0, 6, 4, 1)
@@ -285,22 +285,22 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.pushButton_14, 3, 1, 1, 1)
 
-        self.spb5 = spiralProgressBar(self.widget_4)
+        self.spb5 = SpiralProgressBar(self.widget_4)
         self.spb5.setObjectName(u"spb5")
 
         self.gridLayout_5.addWidget(self.spb5, 0, 0, 4, 1)
 
-        self.spb6 = spiralProgressBar(self.widget_4)
+        self.spb6 = SpiralProgressBar(self.widget_4)
         self.spb6.setObjectName(u"spb6")
 
         self.gridLayout_5.addWidget(self.spb6, 0, 2, 4, 1)
 
-        self.spb7 = spiralProgressBar(self.widget_4)
+        self.spb7 = SpiralProgressBar(self.widget_4)
         self.spb7.setObjectName(u"spb7")
 
         self.gridLayout_5.addWidget(self.spb7, 0, 4, 4, 1)
 
-        self.spb8 = spiralProgressBar(self.widget_4)
+        self.spb8 = SpiralProgressBar(self.widget_4)
         self.spb8.setObjectName(u"spb8")
 
         self.gridLayout_5.addWidget(self.spb8, 0, 6, 4, 1)
@@ -360,132 +360,132 @@ class Ui_MainWindow(object):
 
     def widget_rpb(self):
 
-        self.rpb1.rpb_setValue(55)
-        self.rpb2.rpb_setValue(84)
-        self.rpb3.rpb_setValue(0)
-        self.rpb4.rpb_setValue(46)
-        self.rpb5.rpb_setValue(75)
-        self.rpb6.rpb_setValue(66)
-        self.rpb7.rpb_setValue(5)
-        self.rpb8.rpb_setValue(95)
+        self.rpb1.setValue(55)
+        self.rpb2.setValue(84)
+        self.rpb3.setValue(0)
+        self.rpb4.setValue(46)
+        self.rpb5.setValue(75)
+        self.rpb6.setValue(66)
+        self.rpb7.setValue(5)
+        self.rpb8.setValue(95)
 
 
-        self.rpb2.rpb_setBarStyle("Line")
-        self.rpb2.rpb_setLineColor((0, 10, 15))
-        self.rpb2.rpb_setTextColor((0, 10, 15))
+        self.rpb2.setBarStyle("Line")
+        self.rpb2.setLineColor((0, 10, 15))
+        self.rpb2.setTextColor((0, 10, 15))
 
 
-        self.rpb3.rpb_setBarStyle("Pie")
-        self.rpb3.rpb_setMaximum(360)
-        self.rpb3.rpb_setTextFormat('Value')
-        self.rpb3.rpb_setTextColor((210, 240, 210))
-        self.rpb3.rpb_setPieColor((0, 125, 125))
+        self.rpb3.setBarStyle("Pie")
+        self.rpb3.setMaximum(360)
+        self.rpb3.setTextFormat('Value')
+        self.rpb3.setTextColor((210, 240, 210))
+        self.rpb3.setPieColor((0, 125, 125))
 
 
-        self.rpb4.rpb_setBarStyle("Pizza")
-        self.rpb4.rpb_setRange(0, 200)
-        self.rpb4.rpb_setCircleColor((210, 100, 0))
-        self.rpb4.rpb_setLineColor((160, 50, 0))
-        self.rpb4.rpb_setTextColor((250, 250, 250))
-        self.rpb4.rpb_setCircleRatio(1)
+        self.rpb4.setBarStyle("Pizza")
+        self.rpb4.setRange(0, 200)
+        self.rpb4.setCircleColor((210, 100, 0))
+        self.rpb4.setLineColor((160, 50, 0))
+        self.rpb4.setTextColor((250, 250, 250))
+        self.rpb4.setCircleRatio(1)
 
 
-        self.rpb5.rpb_setBarStyle("Hybrid1")
-        self.rpb5.rpb_setRange(0, 360)
-        self.rpb5.rpb_setTextFormat('Value')
-        self.rpb5.rpb_setPathWidth(2)
-        self.rpb5.rpb_setLineWidth(8)
-        self.rpb5.rpb_setPathColor((100, 100, 100))
-        self.rpb5.rpb_setCircleColor((100, 100, 100))
-        self.rpb5.rpb_setTextColor((250, 250, 250))
+        self.rpb5.setBarStyle("Hybrid1")
+        self.rpb5.setRange(0, 360)
+        self.rpb5.setTextFormat('Value')
+        self.rpb5.setPathWidth(2)
+        self.rpb5.setLineWidth(8)
+        self.rpb5.setPathColor((100, 100, 100))
+        self.rpb5.setCircleColor((100, 100, 100))
+        self.rpb5.setTextColor((250, 250, 250))
 
 
-        self.rpb6.rpb_setBarStyle("Hybrid2")
+        self.rpb6.setBarStyle("Hybrid2")
 
 
-        self.rpb8.rpb_setBarStyle("Hybrid1")
-        self.rpb8.rpb_setRange(0, 360)
+        self.rpb8.setBarStyle("Hybrid1")
+        self.rpb8.setRange(0, 360)
 
 
-        self.rpb7.rpb_setLineWidth(2)
-        self.rpb7.rpb_setLineColor((20, 20, 20))
-        self.rpb7.rpb_setMaximum(200)
-        self.rpb7.rpb_enableText(False)
-        self.rpb7.rpb_setPathWidth(8)
+        self.rpb7.setLineWidth(2)
+        self.rpb7.setLineColor((20, 20, 20))
+        self.rpb7.setMaximum(200)
+        self.rpb7.enableText(False)
+        self.rpb7.setPathWidth(8)
 
-        self.hs1.valueChanged.connect(lambda: self.rpb1.rpb_setValue(self.hs1.value()))
-        self.hs1.valueChanged.connect(lambda: self.rpb8.rpb_setValue(100 - self.hs1.value()))
-        self.hs1.valueChanged.connect(lambda: self.rpb4.rpb_setValue(200 - self.hs1.value()))
-        self.hs1.valueChanged.connect(lambda: self.rpb5.rpb_setValue(2*self.hs1.value()))
+        self.hs1.valueChanged.connect(lambda: self.rpb1.setValue(self.hs1.value()))
+        self.hs1.valueChanged.connect(lambda: self.rpb8.setValue(100 - self.hs1.value()))
+        self.hs1.valueChanged.connect(lambda: self.rpb4.setValue(200 - self.hs1.value()))
+        self.hs1.valueChanged.connect(lambda: self.rpb5.setValue(2*self.hs1.value()))
 
-        self.vs1.valueChanged.connect(lambda: self.rpb2.rpb_setValue(self.vs1.value()))
-        self.vs1.valueChanged.connect(lambda: self.rpb3.rpb_setValue(360 - self.vs1.value()))
+        self.vs1.valueChanged.connect(lambda: self.rpb2.setValue(self.vs1.value()))
+        self.vs1.valueChanged.connect(lambda: self.rpb3.setValue(360 - self.vs1.value()))
 
-        self.vs2.valueChanged.connect(lambda: self.rpb6.rpb_setValue(self.vs2.value()))
-        self.vs2.valueChanged.connect(lambda: self.rpb7.rpb_setValue(self.vs2.value()))
+        self.vs2.valueChanged.connect(lambda: self.rpb6.setValue(self.vs2.value()))
+        self.vs2.valueChanged.connect(lambda: self.rpb7.setValue(self.vs2.value()))
 
 
-        self.b1.clicked.connect(lambda: self.rpb1.rpb_setLineColor((128, 40, 152)))
-        self.b2.clicked.connect(lambda: self.rpb8.rpb_setCircleColor((0, 192, 175)))
-        self.b5.clicked.connect(lambda: self.rpb6.rpb_setTextColor((0, 192, 175)))
-        self.b3.clicked.connect(lambda: self.rpb3.rpb_setValue(0))
-        self.b4.clicked.connect(lambda: self.rpb3.rpb_setValue(100))
-        self.b6.clicked.connect(lambda: self.rpb5.rpb_setValue(0))
-        self.b7.clicked.connect(lambda: self.rpb6.rpb_setValue(100))
-        self.b8.clicked.connect(lambda: self.rpb8.rpb_setValue(360))
+        self.b1.clicked.connect(lambda: self.rpb1.setLineColor((128, 40, 152)))
+        self.b2.clicked.connect(lambda: self.rpb8.setCircleColor((0, 192, 175)))
+        self.b5.clicked.connect(lambda: self.rpb6.setTextColor((0, 192, 175)))
+        self.b3.clicked.connect(lambda: self.rpb3.setValue(0))
+        self.b4.clicked.connect(lambda: self.rpb3.setValue(100))
+        self.b6.clicked.connect(lambda: self.rpb5.setValue(0))
+        self.b7.clicked.connect(lambda: self.rpb6.setValue(100))
+        self.b8.clicked.connect(lambda: self.rpb8.setValue(360))
 
 
     def widget_spb(self):
 
-        self.spb1.spb_setValue((82, 56, 5))
+        self.spb1.setValue((82, 56, 5))
 
-        self.spb2.spb_setNoProgressBar(2)
-        self.spb2.spb_lineWidth(15)
-        self.spb2.spb_setGap(18)
-        self.spb2.spb_setValue((65, 60))
-        self.spb2.spb_lineColor(((28, 129, 196), (90, 193, 211)))
-        self.spb2.spb_pathColor(((195, 225, 242), (208, 234, 244)))
+        self.spb2.setNoProgressBar(2)
+        self.spb2.lineWidth(15)
+        self.spb2.setGap(18)
+        self.spb2.setValue((65, 60))
+        self.spb2.lineColor(((28, 129, 196), (90, 193, 211)))
+        self.spb2.pathColor(((195, 225, 242), (208, 234, 244)))
 
-        self.spb3.spb_setRange((0, 0, 0), (360, 360, 360))
-        self.spb3.spb_lineWidth(15)
-        self.spb3.spb_setGap(17)
-        self.spb3.spb_setInitialPos(('East', 'East', 'East'))
-        self.spb3.spb_setValue((246, 315, 198))
-        self.spb3.spb_setPathHidden(True)
+        self.spb3.setRange((0, 0, 0), (360, 360, 360))
+        self.spb3.lineWidth(15)
+        self.spb3.setGap(17)
+        self.spb3.setInitialPos(('East', 'East', 'East'))
+        self.spb3.setValue((246, 315, 198))
+        self.spb3.setPathHidden(True)
 
-        self.spb4.spb_setNoProgressBar(6)
-        self.spb4.spb_lineWidth(10)
-        self.spb4.spb_setGap(11)
-        self.spb4.spb_setValue((59, 16, 27, 65, 84, 95))
+        self.spb4.setNoProgressBar(6)
+        self.spb4.lineWidth(10)
+        self.spb4.setGap(11)
+        self.spb4.setValue((59, 16, 27, 65, 84, 95))
 
-        self.spb5.spb_lineStyle(('DotLine', 'DotLine', 'DotLine'))
-        self.spb5.spb_setValue((65, 90, 25))
+        self.spb5.lineStyle(('DotLine', 'DotLine', 'DotLine'))
+        self.spb5.setValue((65, 90, 25))
 
-        self.spb6.spb_setNoProgressBar(5)
-        self.spb6.spb_lineWidth(10)
-        self.spb6.spb_setGap(11)
-        self.spb6.spb_setDirection(('Clockwise', 'AntiClockwise', 'AntiClockwise', 'Clockwise', 'Clockwise'))
-        self.spb6.spb_setValue((65, 25, 86, 45, 75))
+        self.spb6.setNoProgressBar(5)
+        self.spb6.lineWidth(10)
+        self.spb6.setGap(11)
+        self.spb6.setDirection(('Clockwise', 'AntiClockwise', 'AntiClockwise', 'Clockwise', 'Clockwise'))
+        self.spb6.setValue((65, 25, 86, 45, 75))
         
-        self.spb7.spb_setGap(12)
+        self.spb7.setGap(12)
         self.spb7.variableWidth(True)
-        self.spb7.spb_widthIncrement(2)
+        self.spb7.widthIncrement(2)
         
-        self.spb8.spb_lineWidth(8)
-        self.spb8.spb_setGap(9)
-        self.spb8.spb_lineCap(('RoundCap', 'SquareCap', 'SquareCap'))
-        self.spb8.spb_setValue((65, 23, 95))
+        self.spb8.lineWidth(8)
+        self.spb8.setGap(9)
+        self.spb8.lineCap(('RoundCap', 'SquareCap', 'SquareCap'))
+        self.spb8.setValue((65, 23, 95))
 
-        self.hs2.valueChanged.connect(lambda: self.spb1.spb_setValue((self.hs2.value(), self.hs2.value()*1.5, self.hs2.value()*1.75)))
-        self.hs2.valueChanged.connect(lambda: self.spb4.spb_setValue((self.hs2.value()*1.25, self.hs2.value()*1.35, self.hs2.value()*1, self.hs2.value()*1.75, self.hs2.value()*1.55, self.hs2.value()*0.45)))
-        self.hs2.valueChanged.connect(lambda: self.spb5.spb_setValue((360 - self.hs2.value()*3.6, 360 - self.hs2.value()*4, 360 - self.hs2.value()*4.2)))
-        self.hs2.valueChanged.connect(lambda: self.spb8.spb_setValue((self.hs2.value(), self.hs2.value()*1.26, self.hs2.value()*2)))
+        self.hs2.valueChanged.connect(lambda: self.spb1.setValue((self.hs2.value(), self.hs2.value()*1.5, self.hs2.value()*1.75)))
+        self.hs2.valueChanged.connect(lambda: self.spb4.setValue((self.hs2.value()*1.25, self.hs2.value()*1.35, self.hs2.value()*1, self.hs2.value()*1.75, self.hs2.value()*1.55, self.hs2.value()*0.45)))
+        self.hs2.valueChanged.connect(lambda: self.spb5.setValue((360 - self.hs2.value()*3.6, 360 - self.hs2.value()*4, 360 - self.hs2.value()*4.2)))
+        self.hs2.valueChanged.connect(lambda: self.spb8.setValue((self.hs2.value(), self.hs2.value()*1.26, self.hs2.value()*2)))
 
-        self.vs3.valueChanged.connect(lambda: self.spb2.spb_setValue((100 - self.vs3.value()*1.2, 100 - self.vs3.value())))
-        self.vs3.valueChanged.connect(lambda: self.spb3.spb_setValue((self.vs3.value()*3.6, 3.6*0.75*self.vs3.value(), 3.6*0.5*self.vs3.value())))
+        self.vs3.valueChanged.connect(lambda: self.spb2.setValue((100 - self.vs3.value()*1.2, 100 - self.vs3.value())))
+        self.vs3.valueChanged.connect(lambda: self.spb3.setValue((self.vs3.value()*3.6, 3.6*0.75*self.vs3.value(), 3.6*0.5*self.vs3.value())))
 
-        self.vs4.valueChanged.connect(lambda: self.spb6.spb_setValue((self.vs4.value(), self.vs4.value()*0.9, self.vs4.value()*0.7, self.vs4.value()*0.6, self.vs4.value()*0.5)))
-        self.vs4.valueChanged.connect(lambda: self.spb7.spb_setValue((self.vs4.value(), self.vs4.value(), self.vs4.value())))
+        self.vs4.valueChanged.connect(lambda: self.spb6.setValue((self.vs4.value(), self.vs4.value()*0.9, self.vs4.value()*0.7, self.vs4.value()*0.6, self.vs4.value()*0.5)))
+        self.vs4.valueChanged.connect(lambda: self.spb7.setValue((self.vs4.value(), self.vs4.value(), self.vs4.value())))
 
 
 def main():
