@@ -17,7 +17,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
-from PySide2extn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import spiralProgressBar 
 
 x = 0
 p = 1
@@ -100,7 +100,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySide2extn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import spiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -179,7 +179,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySide2extn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import spiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -236,7 +236,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySide2extn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import spiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -279,7 +279,7 @@ This function resets the default direction of rotation of progress, to user pref
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySide2extn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -361,7 +361,7 @@ self.spbN.spb_lineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySide2extn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -407,7 +407,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySide2extn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import spiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -444,4 +444,4 @@ This function help to hide the path of the progress bar. It may be useful in cer
 
 ***
 
-Also See: [Class SpiralProgressBar](https://anjalp.github.io/PySide2extn/pages/class/spbClass)
+Also See: [Class SpiralProgressBar](https://khamisikibet.github.io/PySideExtn/pages/class/spbClass)
