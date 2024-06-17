@@ -115,7 +115,7 @@ class MyWidget(QtWidgets.QWidget):
         self.spbMinMax.setMinimumValue((0, 0, 0))    #SETTING THE MINIMUM VALUE
         self.spbMinMax.setMaximumValue((360, 360, 360))   #SETTING THE MAXIMUM VALUE 
         #GREEN COLOR
-        self.spbMinMax.setLineColor(((0, 255, 0), (0, 255, 0), (0, 255, 0)))  
+        self.spbMinMax.setLineColor((QtGui.QColor(0, 255, 0), QtGui.QColor(0, 255, 0), QtGui.QColor(0, 255, 0)))  
         self.spbMinMax.setValue((300, 350, 289))    #SET THE CURRENT VALUE
         
         #SPIRAL PROGRESS BAR spbRange :BLUE COLOR
