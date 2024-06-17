@@ -44,7 +44,7 @@ For more details go to the [Official PySideExtn Documentation Getting Started](h
 
 Quick demo help you to check weather you have successfully installed the Python Package. It comes with a UI loaded with all the widgets in this package with its different customized views. Users can easily differentiate the different styling elements used by widgets.
 
-After installing the PySideExtn/PyQt5extn the users can try out quick demo by:
+After installing the PySideExtn/PyQtExtn the users can try out quick demo by:
 
 1. Open the `cmd` or `terminal`. Open `Python`
 
@@ -73,7 +73,7 @@ Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation]
 
 [FAQ's](https://khamisikibet.github.io/PySideExtn/pages/faqs)
 
-[Official PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
+[Official PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Examples
 
@@ -84,7 +84,7 @@ import sys
 # update this import
 from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.RoundProgressBar import RoundProgressBar #IMPORT THE EXTENSION LIBRARY
 
 x = 0
 p = 1
@@ -99,7 +99,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
         #CREATING THE ROUND PROGRESS BAR OBJECT
-        self.rpb = roundProgressBar()
+        self.rpb = RoundProgressBar()
         
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
@@ -118,7 +118,7 @@ class MyWidget(QtWidgets.QWidget):
             p = -1
         elif x==0:
             p = 1
-        self.rpb.rpb_setValue(x)        #CHANGING THE VALUE OF THE PROGRESS BAR
+        self.rpb.setValue(x)        #CHANGING THE VALUE OF THE PROGRESS BAR
         out_text = 'Round Progress Bar: ' + str(x) + '%'
         self.text.setText(out_text)
         
@@ -136,16 +136,16 @@ if __name__ == "__main__":
 In this demo, we first created an object of the Round Progress Bar:
 
 ```python
-self.rpb = roundProgressBar() #CREATING THE ROUND PROGRESS BAR OBJECT
+self.rpb = RoundProgressBar() #CREATING THE ROUND PROGRESS BAR OBJECT
 ```
 
 After that calling the Round Progress Bar object to display the value of progress using:
 
 ```python
-self.rpb.rpb_setValue(x) #CHANGING THE VALUE OF THE PROGRESS BAR
+self.rpb.setValue(x) #CHANGING THE VALUE OF THE PROGRESS BAR
 ```
 
-The `rpb_setValue(value)` takes an `int` as an argument and updates to change the value of the progress bar to the value given.
+The `setValue(value)` takes an `int` as an argument and updates to change the value of the progress bar to the value given.
 
 For More examples on Round Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
 
@@ -157,7 +157,7 @@ import sys
 from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 x = 0
 p = 1
@@ -172,7 +172,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
         #CREATING THE SPIRAL PROGRESS BAR OBJECT
-        self.spb = spiralProgressBar()    
+        self.spb = SpiralProgressBar()    
         
         #ADDING WIDGETS TO THE VERTICAL LAYOUT
         self.layout = QtWidgets.QVBoxLayout()
@@ -194,7 +194,7 @@ class MyWidget(QtWidgets.QWidget):
             p = 1
             
         #CHANGING THE VALUE OF THE 3 DEFAULT PROGRESS BAR
-        self.spb.spb_setValue((x, x*2, x*3)) 
+        self.spb.setValue((x, x*2, x*3)) 
         
         out_text = 'Spiral Progress Bar: '  
         out_text = out_text + str(x) + '%, ' + str(2*x) + '%, ' + str(3*x) + '%'
@@ -211,19 +211,19 @@ if __name__ == "__main__":
   <img src="assets/spb/spb_defEx.PNG">
 </p>
 
-- Here first create a spiralProgressBar object and then add the progress bar to a layout and control the steps of the progress bar by the clicking of the button. 
+- Here first create a SpiralProgressBar object and then add the progress bar to a layout and control the steps of the progress bar by the clicking of the button. 
 
   ```python
-  self.spb = spiralProgressBar()		
+  self.spb = SpiralProgressBar()		
   ```
 
-- Here we create a spiralProgressBar object instance and then use the `self.spb` as the spiral progress bar to influence its charactor like:
+- Here we create a SpiralProgressBar object instance and then use the `self.spb` as the spiral progress bar to influence its charactor like:
 
   ```python
-  self.spb.spb_setValue((x, x*2, x*3))
+  self.spb.setValue((x, x*2, x*3))
   ```
 
-- Since the default progress bar has 3 individual concentric circle, where each can be controlled individually, we pass a tuple containing the individual value for manipulating each concentric progress bar, to the function `spb_setValue()` , which only accepts a tuple of length equal to the number of concentric progress bar. Every function which can manipulate the properties of the Spiral Progress Bar uses the same idea. The order of entering the value are shown below:
+- Since the default progress bar has 3 individual concentric circle, where each can be controlled individually, we pass a tuple containing the individual value for manipulating each concentric progress bar, to the function `setValue()` , which only accepts a tuple of length equal to the number of concentric progress bar. Every function which can manipulate the properties of the Spiral Progress Bar uses the same idea. The order of entering the value are shown below:
 
 <p align="center">
   <img src="assets/spb/spb_order.png">
@@ -233,13 +233,13 @@ For More examples on Spiral Progress Bar go to: [Official PySideExtn Documentati
 
 ## Help
 
-- **PySideExtn/PyQt5extn is not working in my setup**: Go to Github [PySideExtn](https://github.com/anjalp/PySideExtn) repo. and raise an issue or just fill the official [PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA).
-- **Unknown errors**: Raise a GitHub issue or fill the official [PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
+- **PySideExtn/PyQtExtn is not working in my setup**: Go to Github [PySideExtn](https://github.com/khamisikibet/PySideExtn) repo. and raise an issue or just fill the official [PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA).
+- **Unknown errors**: Raise a GitHub issue or fill the official [PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Support
 - Please feel free to contribute to the project by sharing the idea you have, which is not natively present in the PySide2, PyQt5, PySide6 or PyQt6/PyQt5 but essential for your workflow.
 
-- If your idea worth the use, then definitely it will be available in the next update of the PySideExtn/PyQt5extn.
+- If your idea worth the use, then definitely it will be available in the next update of the PySideExtn/PyQtExtn.
 
 :smiley: Support like this motivates me to do more creative, work for Open Source.
 
