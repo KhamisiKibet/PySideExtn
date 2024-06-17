@@ -102,7 +102,7 @@ class MyWidget(QtWidgets.QWidget):
         self.rpb3 = RoundProgressBar()
 
         #SETTING THE RANGE : 
-        self.rpb.setMaximum(720) 
+        self.rpb.setMaximumValue(720) 
         self.rpb2.setRange(0, 720)
         self.rpb3.setRange(0, 1000)
         
@@ -129,7 +129,7 @@ if __name__ == "__main__":
 </p>
 
 
-The Maximum and Minimum values of the progress bar can be set using the method: `setMaximum()`, and `setMinimum()`. By default, the maximum value is set to 100, and the minimum to 0. This can be changed as users use cases. The same result can be achieved by the user using the function: `setRange()`. The range function takes two parameters: `minimum` and `maximum` in order.
+The Maximum and Minimum values of the progress bar can be set using the method: `setMaximumValue()`, and `setMinimum()`. By default, the maximum value is set to 100, and the minimum to 0. This can be changed as users use cases. The same result can be achieved by the user using the function: `setRange()`. The range function takes two parameters: `minimum` and `maximum` in order.
 
 ***
 
@@ -212,19 +212,19 @@ For each parts, we have the following variable which can be changed: Color, Widt
 
 ```python
 #Line:
-object.setLineColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
+object.setLineColor(QColor) #ARGUMENT QColor
 
 #Path:
-object.setPathColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
+object.setPathColor(QColor) #ARGUMENT QColor
 
 #Text:
-object.setTextColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
+object.setTextColor(QColor) #ARGUMENT QColor
 
 #Circle:
-object.setCircleColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
+object.setCircleColor(QColor) #ARGUMENT QColor
 
 #Pie:
-object.setPieColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
+object.setPieColor(QColor) #ARGUMENT QColor
 
 ```
 
@@ -550,8 +550,8 @@ class MyWidget(QtWidgets.QWidget):
         self.rpb2.setPathWidth(2)
 
         #CHANGING THE PATH COLOR
-        self.rpb.setPathColor((125, 255, 255))
-        self.rpb2.setPathColor((0, 0, 0))
+        self.rpb.setPathColor(QtGui.QColor(125, 255, 255))
+        self.rpb2.setPathColor(QtGui.QColor(0, 0, 0))
         
         #SETTING THE VALUE
         self.rpb.setValue(85)
@@ -582,12 +582,12 @@ Similar to the line width corresponding to the line thickness in px, the path wi
 
 * **Path Color**
 
-Path color method help to change the color of the path of the round Progress Bar path. The method : `setPathColor()` accepts a tuple in format: `(R, G, B)`.
+Path color method help to change the color of the path of the round Progress Bar path. The method : `setPathColor()` accepts a tuple in format: `QColor`.
 
 ```python
 #CHANGING THE PATH COLOR
-self.rpb.setPathColor((125, 255, 255))  #CYAN
-self.rpb2.setPathColor((0, 0, 0))   #BLACK COLOR
+self.rpb.setPathColor(QColor(125, 255, 255))  #CYAN
+self.rpb2.setPathColor(QColor(0, 0, 0))   #BLACK COLOR
 ```
 
 ***
