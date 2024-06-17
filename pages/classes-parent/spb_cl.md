@@ -258,7 +258,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 **Parameters**: Color in `tuple`
 
-The line color function resets the default line color of the progress bar to user-specified. It accepts a tuple with elements corresponding to the color of the line of each circles in the spiral progress bar. Each element should be in the format `(R, G, B)`. Remember this function changes the color of the line only, path color should be set differently.
+The line color function resets the default line color of the progress bar to user-specified. It accepts a tuple with elements corresponding to the color of the line of each circles in the spiral progress bar. Each element should be in the format `QColor`. Remember this function changes the color of the line only, path color should be set differently.
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
@@ -300,7 +300,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 **Parameters**: Color in `tuple`
 
-Path color is set independently from the line color. Path color is similar to line color and is passed as a tuple containing element in the form `(R, G, B)`.
+Path color is set independently from the line color. Path color is similar to line color and is passed as a tuple containing element in the form `(QColor)`.
 
 ***
 
