@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -11,7 +11,7 @@ class MyWidget(QtWidgets.QWidget):
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
-        self.spbN.lineWidth(15)
+        self.spbN.setLineWidth(15)
         
         #VARIABLE WIDTH AND WIDTH INCREMENT
         self.spbN.variableWidth(True)

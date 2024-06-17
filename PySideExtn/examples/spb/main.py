@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 

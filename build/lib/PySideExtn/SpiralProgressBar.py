@@ -79,7 +79,7 @@ class SpiralProgressBar(QtWidgets.QWidget):
 
 #------------------------------------------------------METHODS FOR CHANGING THE PROPERTY OF THE SPIRALPROGRESSBAR :SOLTS
 
-    def setMinimumSize(self, width, height):
+    def setMinimumSize(self, size: QSize):
         """
         Minimum Size of the Widget
         ...
@@ -98,12 +98,12 @@ class SpiralProgressBar(QtWidgets.QWidget):
         none
         """
         self.dynamicMin = False
-        self.setMinimumSize(width, height)
-        self.minimSize = (width, height)
+        # self.setMinimumSize(size)
+        self.minimSize = (size)
         self.update()
 
 
-    def setMaximumSize(self, width, height):
+    def setMaximumSize(self, size: QSize):
         """
         Maximum Size of the Widget
         ...
@@ -122,8 +122,8 @@ class SpiralProgressBar(QtWidgets.QWidget):
         none
         """
         self.dynamicMax = False
-        self.setMaximumSize(width, height)
-        self.maximSize = (width, height)
+        # self.setMaximumSize(size)
+        self.maximSize = (size)
         self.update()
 
 

@@ -1,10 +1,11 @@
 Metadata-Version: 2.1
 Name: PySideExtn
-Version: 2.0.1
-Summary: PySideExtn is an open-source Python programming language extension designed to empower PySide2/6 users with an expanded toolkit. This extension enriches the PySide2/6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.
+Version: 2.0.2
+Summary: PySideExtn is an open-source Python programming language extension designed to empower PySide2, PyQt5, PySide6 or PyQt6 users with an expanded toolkit. This extension enriches the PySide2, PyQt5, PySide6 or PyQt6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.
 Home-page: https://github.com/KhamisiKibet/PySideExtn
 Author: ANJAL.P. Improved by Khamisi Kibet
 Author-email: spinncompany@gmail.com
+Keywords: PySide,PyQt,animation,custom,widgets,QML,C++,QT Creator,Moder GUI,Desktop GUI,Design
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: 3.5
@@ -21,7 +22,7 @@ Requires-Dist: qtpy
 
 # PySideExtn
 
-An extension for the Python PySide2 Qt Framework which expands the scope of the PySide2 package with many different modern widgets. Current release is occupied with two widget which are not natively present in the PySide2 package.
+An extension for the Python PySide2, PyQt5, PySide6 or PyQt6 Qt Framework which expands the scope of the PySide2, PyQt5, PySide6 or PyQt6 package with many different modern widgets. Current release is occupied with two widget which are not natively present in the PySide2, PyQt5, PySide6 or PyQt6 package.
 
 *RoundProgressBar*
 
@@ -35,7 +36,7 @@ An extension for the Python PySide2 Qt Framework which expands the scope of the 
   <img src="assets/spb.png">
 </p>
 
-:point_right: Go to [Home Page](https://khamisikibet.github.io/PySideExtn/) of Documentation for further Help
+Go to [Home Page](https://khamisikibet.github.io/PySideExtn/) of Documentation for further Help
 
 ## Getting Started
 
@@ -59,7 +60,7 @@ pip install <PySideExtn------.whl>file
 
 To verify that installation is complete, print out the `pip list` and search for the PySideExtn package. 
 
-:point_right: For more details go to the [Official PySideExtn Documentation Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
+For more details go to the [Official PySideExtn Documentation Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
 
 ## Quick Demo
 
@@ -82,19 +83,19 @@ After installing the PySideExtn/PyQtExtn the users can try out quick demo by:
 
 Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation](https://khamisikibet.github.io/PySideExtn/).
 
-:point_right: [Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
+[Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
 
-:point_right: [Examples](https://khamisikibet.github.io/PySideExtn/pages/example)
+[Examples](https://khamisikibet.github.io/PySideExtn/pages/example)
 
-:point_right: [Classes](https://khamisikibet.github.io/PySideExtn/pages/classes)
+[Classes](https://khamisikibet.github.io/PySideExtn/pages/classes)
 
-:point_right: [Errors and Exceptions](https://khamisikibet.github.io/PySideExtn/pages/error&exception)
+[Errors and Exceptions](https://khamisikibet.github.io/PySideExtn/pages/error&exception)
 
-:point_right: [Version History](https://khamisikibet.github.io/PySideExtn/pages/version)
+[Version History](https://khamisikibet.github.io/PySideExtn/pages/version)
 
-:point_right: [FAQ's](https://khamisikibet.github.io/PySideExtn/pages/faqs)
+[FAQ's](https://khamisikibet.github.io/PySideExtn/pages/faqs)
 
-:point_right: [Official PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
+[Official PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Examples
 
@@ -102,7 +103,8 @@ Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation]
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+# update this import
+from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.RoundProgressBar import RoundProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -150,7 +152,7 @@ if __name__ == "__main__":
 ```
 
 <p align="center">
-  <img src="assets/rpb/demo.PNG">
+  <img src="assets/rpb/rpb_demo.PNG">
 </p>
 
 In this demo, we first created an object of the Round Progress Bar:
@@ -167,13 +169,14 @@ self.rpb.setValue(x) #CHANGING THE VALUE OF THE PROGRESS BAR
 
 The `setValue(value)` takes an `int` as an argument and updates to change the value of the progress bar to the value given.
 
-:point_right: For More examples on Round Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
+For More examples on Round Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
 
 * **Default Spiral Progress Bar**
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+# update this import
+from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 
@@ -227,7 +230,7 @@ if __name__ == "__main__":
 ```
 
 <p align="center">
-  <img src="assets/spb/defEx.PNG">
+  <img src="assets/spb/spb_defEx.PNG">
 </p>
 
 - Here first create a SpiralProgressBar object and then add the progress bar to a layout and control the steps of the progress bar by the clicking of the button. 
@@ -245,10 +248,10 @@ if __name__ == "__main__":
 - Since the default progress bar has 3 individual concentric circle, where each can be controlled individually, we pass a tuple containing the individual value for manipulating each concentric progress bar, to the function `setValue()` , which only accepts a tuple of length equal to the number of concentric progress bar. Every function which can manipulate the properties of the Spiral Progress Bar uses the same idea. The order of entering the value are shown below:
 
 <p align="center">
-  <img src="assets/spb/order.png">
+  <img src="assets/spb/spb_order.png">
 </p>
 
-:point_right: For More examples on Spiral Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples)
+For More examples on Spiral Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples)
 
 ## Help
 
@@ -256,13 +259,9 @@ if __name__ == "__main__":
 - **Unknown errors**: Raise a GitHub issue or fill the official [PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Support
+- Please feel free to contribute to the project by sharing the idea you have, which is not natively present in the PySide2, PyQt5, PySide6 or PyQt6/PyQt5 but essential for your workflow.
 
-- Please feel free to contribute to the project by sharing the idea you have, which is not natively present in the PySide2/PyQt5/PySide6/PyQt6 but essential for your workflow.
-- You can fill up the official [PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA) where you just Brief the idea you have and also provide an active email address which is required for us to connect you.
 - If your idea worth the use, then definitely it will be available in the next update of the PySideExtn/PyQtExtn.
-- If this package made your life easy, then please share your experience with us [Here](https://forms.gle/yfKVK85sLLMJMCfJA)
-
-:smiley: Support my work by forking or downloading this project, check it out, and [share the experience](https://forms.gle/yfKVK85sLLMJMCfJA).
 
 :smiley: Support like this motivates me to do more creative, work for Open Source.
 

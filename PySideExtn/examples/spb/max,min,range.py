@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -13,9 +13,9 @@ class MyWidget(QtWidgets.QWidget):
         self.spbRange = SpiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
 
         #SPIRAL PROGRESS BAR spbMinMax : GREEN COLOR
-        self.spbMinMax.setMinimum((0, 0, 0))    #SETTING THE MINIMUM VALUE
-        self.spbMinMax.setMaximum((360, 360, 360))   #SETTING THE MAXIMUM VALUE 
-        self.spbMinMax.lineColor(((0, 255, 0), (0, 255, 0), (0, 255, 0)))  #GREEN COLOR
+        self.spbMinMax.setMinimumValue((0, 0, 0))    #SETTING THE MINIMUM VALUE
+        self.spbMinMax.setMaximumValue((360, 360, 360))   #SETTING THE MAXIMUM VALUE 
+        self.spbMinMax.setLineColor((QtGui.QColor(0, 255, 0), QtGui.QColor(0, 255, 0), QtGui.QColor(0, 255, 0)))  #GREEN COLOR
         self.spbMinMax.setValue((300, 350, 289))    #SET THE CURRENT VALUE
         
         #SPIRAL PROGRESS BAR spbRange :BLUE COLOR

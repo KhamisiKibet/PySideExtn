@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -13,7 +13,7 @@ class MyWidget(QtWidgets.QWidget):
         self.rpb3 = RoundProgressBar()
 
         #SETTING THE RANGE : MIN-0 & MAX:360
-        self.rpb.setMaximum(720)
+        self.rpb.setMaximumValue(720)
         self.rpb2.setRange(0, 720)
         self.rpb3.setRange(0, 1000)
         

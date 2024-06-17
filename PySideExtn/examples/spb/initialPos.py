@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -10,7 +10,7 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = 'Spiral Progress Bar'
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbN.setNoProgressBar(4)
+        self.spbN.setNumberOfProgressBar(4)
 
         #SETING THE INITIAL POSITION OF THE PROGRESS BAR: FROM OUTER-INWARDS
         self.spbN.setInitialPos(('North', 'South', 'East', 'West'))

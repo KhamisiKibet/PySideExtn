@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -23,8 +23,8 @@ class MyWidget(QtWidgets.QWidget):
         self.rpb2.setPathWidth(2)
 
         #CHANGING THE PATH COLOR
-        self.rpb.setPathColor((125, 255, 255))
-        self.rpb2.setPathColor((0, 0, 0))
+        self.rpb.setPathColor(QtGui.QColor(125, 255, 255))
+        self.rpb2.setPathColor(QtGui.QColor(0, 0, 0))
         
         #SETTING THE VALUE
         self.rpb.setValue(85)

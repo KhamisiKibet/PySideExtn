@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -10,20 +10,20 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = 'Spiral Progress Bar'
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbN.setNoProgressBar(4)
+        self.spbN.setNumberOfProgressBar(4)
         
         #LINE WIDTH: 15px
-        self.spbN.lineWidth(15)
+        self.spbN.setLineWidth(15)
         self.spbN.setGap(17)
 
         #LINE COLOR
-        self.spbN.lineColor(((0, 125, 125), (125, 0, 125), (125, 255, 0), (125, 125, 125)))
+        self.spbN.setLineColor((QtGui.QColor(0, 125, 125), QtGui.QColor(125, 0, 125), QtGui.QColor(125, 255, 0), QtGui.QColor(125, 125, 125)))
 
         #LINE STYLE
-        self.spbN.lineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
+        self.spbN.setLineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
 
         #LINE CAP
-        self.spbN.lineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
+        self.spbN.setLineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 
         self.spbN.setValue((55, 55, 55, 55))
 

@@ -1,5 +1,5 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     widget = MyWidget()
     widget.show()
-        sys.exit(app.exec_())
+    sys.exit(app.exec_())

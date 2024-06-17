@@ -1,7 +1,7 @@
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from RoundProgressBar import RoundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
