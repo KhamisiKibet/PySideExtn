@@ -23,26 +23,26 @@ SpiralProgressBar Class provides a fully customizable (Max. 6) Concentric Round 
 
 ## Functions
 
-* [def spb_setMaximumSize(width, height)](#pyside2qtwidgtesspiralprogressbarspb_setmaximumsizewidth-height)
-* [def spb_setMinimumSize(width, height)](#pyside2qtwidgtesspiralprogressbarspb_setminimumsizewidth-height)
-* [def spb_setNoProgressBar(int)](#pyside2qtwidgtesspiralprogressbarspb_setnoprogressbarint)
-* [def spb_setValue(value tuple)](#pyside2qtwidgtesspiralprogressbarspb_setvaluevalue-tuple)
-* [def spb_setMaximum(max tuple)](#pyside2qtwidgtesspiralprogressbarspb_setmaximummax-tuple)
-* [def spb_setMinimum(min tuple)](#pyside2qtwidgtesspiralprogressbarspb_setminimummin-tuple)
-* [def spb_setRange(min tuple, max tuple)](#pyside2qtwidgtesspiralprogressbarspb_setrangemin-tuple-max-tuple)
-* [def spb_setGap(int)](#pyside2qtwidgtesspiralprogressbarspb_setgapint)
-* [def spb_setInitialPos(position)](#pyside2qtwidgtesspiralprogressbarspb_setinitialposposition-tuple)
-* [def spb_setGeometry(X, Y)](#pyside2qtwidgtesspiralprogressbarspb_setgeometryx-y)
-* [def spb_setDirection(dir)](#pyside2qtwidgtesspiralprogressbarspb_setdirectiondir-tuple)
-* [def spb_reset()](#pyside2qtwidgtesspiralprogressbarspb_reset)
+* [def setMaximumSize(width, height)](#pyside2qtwidgtesspiralprogressbarsetmaximumsizewidth-height)
+* [def setMinimumSize(width, height)](#pyside2qtwidgtesspiralprogressbarsetminimumsizewidth-height)
+* [def setNoProgressBar(int)](#pyside2qtwidgtesspiralprogressbarsetnoprogressbarint)
+* [def setValue(value tuple)](#pyside2qtwidgtesspiralprogressbarsetvaluevalue-tuple)
+* [def setMaximum(max tuple)](#pyside2qtwidgtesspiralprogressbarsetmaximummax-tuple)
+* [def setMinimum(min tuple)](#pyside2qtwidgtesspiralprogressbarsetminimummin-tuple)
+* [def setRange(min tuple, max tuple)](#pyside2qtwidgtesspiralprogressbarsetrangemin-tuple-max-tuple)
+* [def setGap(int)](#pyside2qtwidgtesspiralprogressbarsetgapint)
+* [def setInitialPos(position)](#pyside2qtwidgtesspiralprogressbarsetinitialposposition-tuple)
+* [def setGeometry(X, Y)](#pyside2qtwidgtesspiralprogressbarsetgeometryx-y)
+* [def setDirection(dir)](#pyside2qtwidgtesspiralprogressbarsetdirectiondir-tuple)
+* [def reset()](#pyside2qtwidgtesspiralprogressbarreset)
 * [def variableWidth(bool)](#pyside2qtwidgtesspiralprogressbarvariablewidthbool)
-* [def spb_widthIncrement(int)](#pyside2qtwidgtesspiralprogressbarspb_widthincrementint)
-* [def spb_lineWidth(int)](#pyside2qtwidgtesspiralprogressbarspb_linewidthint)
-* [def spb_lineColor(color tuple)](#pyside2qtwidgtesspiralprogressbarspb_linecolorcolor-tuple)
-* [def spb_lineStyle(style tuple)](#pyside2qtwidgtesspiralprogressbarspb_linestylestyle-tuple)
-* [def spb_lineCap(cap tuple)](#pyside2qtwidgtesspiralprogressbarspb_linecapcap-tuple)
-* [def spb_setPathHidden(bool)](#pyside2qtwidgtesspiralprogressbarspb_setpathhiddenbool)
-* [def spb_pathColor(color tuple)](#pyside2qtwidgtesspiralprogressbarspb_pathcolorcolor-tuple)
+* [def widthIncrement(int)](#pyside2qtwidgtesspiralprogressbarwidthincrementint)
+* [def lineWidth(int)](#pyside2qtwidgtesspiralprogressbarlinewidthint)
+* [def lineColor(color tuple)](#pyside2qtwidgtesspiralprogressbarlinecolorcolor-tuple)
+* [def lineStyle(style tuple)](#pyside2qtwidgtesspiralprogressbarlinestylestyle-tuple)
+* [def lineCap(cap tuple)](#pyside2qtwidgtesspiralprogressbarlinecapcap-tuple)
+* [def setPathHidden(bool)](#pyside2qtwidgtesspiralprogressbarsetpathhiddenbool)
+* [def pathColor(color tuple)](#pyside2qtwidgtesspiralprogressbarpathcolorcolor-tuple)
 
 ## Detailed Description
 
@@ -57,11 +57,11 @@ A Spiral Progress as the name suggests is ***not* Spiral** but is made of multip
 
 Spiral Progress Bar uses the concept of steps, You set it up by specifying the minimum and maximum possible step values (for each concentric round progress bar individually), and it will display the percentage of steps that have been completed when you later give it the current step value(for each concentric round progress bar individually). The percentage is calculated by dividing the progress (`value()` - `minimum`)/(`maximum` - `minimum`)
 
-You can specify the minimum and the maximum number of steps with `spb_setMinimum()` and `spb_setMaximum`() The current number of steps is set with `spb_setValue()`. Each of this function takes a tuple as input containing the respective values *(e.g.: spiral progress bar with default no. of round progress bars of 3, minimum as (0, 0, 0), maximum as (100, 100, 100), and value as (12, 75, 86), and so the spiral progress bar displays the following percentage 12%, 75%, 86% from outward to inwards respectively)* in order. The progress bar can be rewound to the beginning with `spb_reset()`
+You can specify the minimum and the maximum number of steps with `setMinimum()` and `setMaximum`() The current number of steps is set with `setValue()`. Each of this function takes a tuple as input containing the respective values *(e.g.: spiral progress bar with default no. of round progress bars of 3, minimum as (0, 0, 0), maximum as (100, 100, 100), and value as (12, 75, 86), and so the spiral progress bar displays the following percentage 12%, 75%, 86% from outward to inwards respectively)* in order. The progress bar can be rewound to the beginning with `reset()`
 
 ## Naming Convention
 
-As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use a *custom name* for the methods in the SpiralProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So to modify the spiral progress bar style, text, color, etc each time, the method name has to be called with a **prefix of `spb_`**. So the idea remains the same, eg: that if you want to set the maximum value of the progress bar, call the method `spb_setMaximum()` and pass the maximum tuple as an argument. This idea applies to all other methods used in this class.
+As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use a *custom name* for the methods in the SpiralProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So to modify the spiral progress bar style, text, color, etc each time, the method name has to be called with a **prefix of ``**. So the idea remains the same, eg: that if you want to set the maximum value of the progress bar, call the method `setMaximum()` and pass the maximum tuple as an argument. This idea applies to all other methods used in this class.
 
 The Spiral Progress Bar has **3 Parts: Line, Path, Number of Progress Bar**, *see below*
 
@@ -79,9 +79,9 @@ Spiral progress bar contains many elements, which can be customized according to
 
 Examples of some of the function is displayed below:
 
-* `spb_setValue((58, 65, 25))`: Set the value of the progress bar to 58%, 65%, 25% for the outer most, middle and the innermost circle respectively
-* `spb_lineColor(((0, 255, 125), (255, 0, 125), (125, 125, 125)))`: Set a custom color to each circle progress bar with the following order: (0, 255, 125): Outermost line color, (255, 0, 125): Middle most circle and (125, 125, 125): Innermost circle.
-* `spb_lineStyle(('DotLine', 'DashLine', 'SolidLine'))`: Here the tuple contains a string representing the line style. The idea behind tuple is also the same.
+* `setValue((58, 65, 25))`: Set the value of the progress bar to 58%, 65%, 25% for the outer most, middle and the innermost circle respectively
+* `lineColor(((0, 255, 125), (255, 0, 125), (125, 125, 125)))`: Set a custom color to each circle progress bar with the following order: (0, 255, 125): Outermost line color, (255, 0, 125): Middle most circle and (125, 125, 125): Innermost circle.
+* `lineStyle(('DotLine', 'DashLine', 'SolidLine'))`: Here the tuple contains a string representing the line style. The idea behind tuple is also the same.
 
 ## Default Settings of Spiral Progress Bar
 
@@ -105,7 +105,7 @@ Whenever you create a spiral progress class object you will be presented with a 
 
 ## Class SpiralProgressBar()
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMaximumSize(width, height)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setMaximumSize(width, height)***
 
 **Parameters**: width, height in `int`
 
@@ -113,7 +113,7 @@ Set the maximum size of the progress bar by passing width and height as argument
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMinimumSize(width, height)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setMinimumSize(width, height)***
 
 **Parameters** : width, height in `int`
 
@@ -121,7 +121,7 @@ Set the minimum size of the progress bar by passing width and height as argument
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setNoProgressBar(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setNoProgressBar(int)***
 
 **Parameters**:  Number of Concentric Progress Bar in `int`
 
@@ -131,7 +131,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setValue(value tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setValue(value tuple)***
 
 **Parameters**: Value in `tuple`
 
@@ -141,18 +141,18 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMaximum(max tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setMaximum(max tuple)***
 
 **Parameters**: Maximum Value as a `tuple`
 
 A function to set the maximum value of the progress bar. By default, it is set to 100. The user can individually customize the maximum for each circle in the progress bar. The function takes a tuple as an argument with elements corresponds to the maximum of each circle of the progress bar. Example:
-`spb_setMaximum((100, 200, 300))` this makes the maximum value of the outermost progress bar to 100, middle progress  bar to 200 and innermost progress bar to 300.
+`setMaximum((100, 200, 300))` this makes the maximum value of the outermost progress bar to 100, middle progress  bar to 200 and innermost progress bar to 300.
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#2-maximum-minimum-and-range)
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMinimum(min tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setMinimum(min tuple)***
 
 **Parameters**: Minimum Value as a `tuple`
 
@@ -162,7 +162,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setRange(min tuple, max tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setRange(min tuple, max tuple)***
 
 **Parameters**: Maximum and Minimum passed as a `tuple`
 
@@ -172,7 +172,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setGap(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setGap(int)***
 
 **Parameters**: Gap between the lines in `int`
 
@@ -182,12 +182,12 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setInitialPos(position tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setInitialPos(position tuple)***
 
 **Parameters**: Starting position of the Progress bar as tuple.
 
 There are 4 starting positions users can use they are: `North`, `South`, `East`, and `West`. Each concentric circles can be individually positioned by passing the position as a tuple. Example:
-`spb_setInitialPos(('North', 'South', East))`:  See image Below
+`setInitialPos(('North', 'South', East))`:  See image Below
 
 See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#3-initial-position)
 
@@ -198,7 +198,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setGeometry(x, y)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setGeometry(x, y)***
 
 **Parameters**: Position of the spiral progress bar: x and y in `int`
 
@@ -206,7 +206,7 @@ The geometry function can be effectively used in cases when the user wants to cu
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setDirection(dir tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setDirection(dir tuple)***
 
 **Parameters**: Direction as `tuple`
 
@@ -216,7 +216,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_reset()***
+### ***PySide2.QtWidgtes.SpiralProgressBar.reset()***
 
 **Parameters**: Nil
 
@@ -228,13 +228,13 @@ This function resets the spiral progress bar to a minimum value i.e. to 0%.
 
 **Parameters**: `bool`
 
-The width of each line can be specified by the `spb_lineWidth()` function but this sets the width to all the line elements. This can be made to change by this function, where if `True` then the width increases going from outer to the inner circles. The increment is set to 1px increment as default. But this can be changed using the function `spb_widthIncrement` see below. 
+The width of each line can be specified by the `lineWidth()` function but this sets the width to all the line elements. This can be made to change by this function, where if `True` then the width increases going from outer to the inner circles. The increment is set to 1px increment as default. But this can be changed using the function `widthIncrement` see below. 
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#6-variable-width-and-width-increment)
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_widthIncrement(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.widthIncrement(int)***
 
 **Parameters**: Increment as `int`
 
@@ -244,7 +244,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineWidth(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.lineWidth(int)***
 
 **Parameters**: Width in `int`
 
@@ -254,7 +254,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineColor(color tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.lineColor(color tuple)***
 
 **Parameters**: Color in `tuple`
 
@@ -264,29 +264,29 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineStyle(style tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.lineStyle(style tuple)***
 
 **Parameters**: style string as an element of a `tuple`
 
 A total of 3 different line style is defined in the class, which are: `SolidLine`, `DotLine`, and `DashLine`. Each circle in the spiral progress bar can have anindependent style. the tuple passed contains the string of the style name with the specific order. Example:
-`spb_lineStyle(('SolidLine', 'DotLine', 'DashLine'))`
+`lineStyle(('SolidLine', 'DotLine', 'DashLine'))`
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineCap(cap tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.lineCap(cap tuple)***
 
 **Parameters**: Cap in `tuple`
 
 Two different caps are available in this class: `RoundCap` and the `SquareCap`. the default is `RoundCap`. Users need to pass a tuple containing the cap name as a string to this function. Example:
-`spb_lineCap(('RoundCap', 'SquareCap', 'RoundCap'))`
+`lineCap(('RoundCap', 'SquareCap', 'RoundCap'))`
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setPathHidden(bool)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.setPathHidden(bool)***
 
 **Parameters**: `bool`
 
@@ -296,7 +296,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.SpiralProgressBar.spb_pathColor(color tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.pathColor(color tuple)***
 
 **Parameters**: Color in `tuple`
 
