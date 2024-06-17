@@ -12,7 +12,7 @@ permalink: /
 
 {: .fs-5 }
 
-PySideExtn/PyQtExtn is an Open Source Python Programming language extension for PySide2/PyQt5, which greatly enhances the capability of the listed library with extra widgets and more. 
+PySideExtn/PyQtExtn is an Open Source Python Programming language extension for PySide2/PyQt5/PySide6/PyQt6, which greatly enhances the capability of the listed library with extra widgets and more. 
 
 {: .fs-6 .fw-300 }
 
@@ -20,7 +20,7 @@ PySideExtn/PyQtExtn is an Open Source Python Programming language extension for 
 
 ***View it on GitHub Repository***
 
-[PySideExtn](https://github.com/khamisikibet/PySideExtn){: .btn .fs-5 .mb-4 .mb-md-0 }    [PyQt5extn](https://github.com/khamisikibet/PyQt5extn){: .btn .fs-5 .mb-4 .mb-md-0 }
+[PySideExtn](https://github.com/khamisikibet/PySideExtn){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 
 
@@ -34,7 +34,7 @@ As of the Initial Release the extension is equipped with two new Widgets: *Round
   <img src="pages/assets/rpb.png">
 </p>
 
-PySide2/PyQt5 natively does not support a round progress bar. PySideExtn/PyQtExtn package solves this problem and gives users the ability to add the round progress bar in their existing projects or new ones same as they used to work with other native PySide2/PyQt5 widgets. It can also be used with QtDesigner(refer [Getting Started](pages/get_started#using-with-qtdesigner)). The above image represent the potential of this package for customization of the round progress bar widget.
+PySide2/PyQt5/PySide6/PyQt6 natively does not support a round progress bar. PySideExtn/PyQtExtn package solves this problem and gives users the ability to add the round progress bar in their existing projects or new ones same as they used to work with other native PySide2/PyQt5/PySide6/PyQt6 widgets. It can also be used with QtDesigner(refer [Getting Started](pages/get_started#using-with-qtdesigner)). The above image represent the potential of this package for customization of the round progress bar widget.
 
 [See Examples](pages/examples/rpbExamples){: .btn .fs-5 .mb-4 .mb-md-0 } [Details](pages/class/rpbClass){: .btn .fs-5 .mb-4 .mb-md-0 }
 
@@ -44,13 +44,9 @@ PySide2/PyQt5 natively does not support a round progress bar. PySideExtn/PyQtExt
   <img src="pages/assets/spb.png">
 </p>
 
-Spiral progress bar concept is similar to that of the round progress bar, except that it has many concentric round progress bars, with individual element customization. The spiral progress bar can be treated as any other PySide2/PyQt5 widget. Check below for more info on the widget.
+Spiral progress bar concept is similar to that of the round progress bar, except that it has many concentric round progress bars, with individual element customization. The spiral progress bar can be treated as any other PySide2/PyQt5/PySide6/PyQt6 widget. Check below for more info on the widget.
 
 [See Examples](pages/examples/spbExamples){: .btn .fs-5 .mb-4 .mb-md-0 }  [Details](pages/class/spbClass){: .btn .fs-5 .mb-4 .mb-md-0 }
-
-## Help
-
-Official form: [PySideExtn/PyQtExtn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## License
 
