@@ -349,7 +349,7 @@ Sets the direction of the progress bar motion to clockwise or anticlockwise dire
 By default the direction is `Clockwise`
 
 <p align="center">
-  <img src="../assets/rpb/dir.png">
+  <img src="../assets/rpb/rpb_dir.png">
 </p>
 
 See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#6-direction-of-progress)
@@ -364,7 +364,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 As told earlier the round progress bar has total of 6 different types of as listed below:
 
 <p align="center">
-  <img src="../assets/rpb/typ.png">
+  <img src="../assets/rpb/rpb_typ.png">
 </p>
 
 
@@ -493,7 +493,7 @@ self.rpb.setValue(180)
 ```
 
 <p align="center">
-  <img src="../assets/rpb/value.PNG">
+  <img src="../assets/rpb/rpb_value.PNG">
 </p>
 
 
