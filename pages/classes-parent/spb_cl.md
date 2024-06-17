@@ -80,7 +80,7 @@ Spiral progress bar contains many elements, which can be customized according to
 Examples of some of the function is displayed below:
 
 * `setValue((58, 65, 25))`: Set the value of the progress bar to 58%, 65%, 25% for the outer most, middle and the innermost circle respectively
-* `setLineColor(((0, 255, 125), (255, 0, 125), (125, 125, 125)))`: Set a custom color to each circle progress bar with the following order: (0, 255, 125): Outermost line color, (255, 0, 125): Middle most circle and (125, 125, 125): Innermost circle.
+* `setLineColor((QColor(0, 255, 125), QColor(255, 0, 125), QColor(125, 125, 125)))`: Set a custom color to each circle progress bar with the following order: (0, 255, 125): Outermost line color, (255, 0, 125): Middle most circle and (125, 125, 125): Innermost circle.
 * `setLineStyle(('DotLine', 'DashLine', 'SolidLine'))`: Here the tuple contains a string representing the line style. The idea behind tuple is also the same.
 
 ## Default Settings of Spiral Progress Bar
