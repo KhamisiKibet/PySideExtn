@@ -28,7 +28,7 @@ RoundProgressBar widget provides a fully customizable round progress bar with 6 
 * [def setMinimumSize(width, height)](#pyside2qtwidgtesroundprogressbarsetminimumsizewidth-height)
 * [def setMaximumSize(width, height)](#pyside2qtwidgtesroundprogressbarsetmaximumsizewidth-height)
 * [def setMinimum(minValue)](#pyside2qtwidgtesroundprogressbarsetminimummin)
-* [def setMaximum(maxValue)](#pyside2qtwidgtesroundprogressbarsetmaximummax)
+* [def setMaximumValue(maxValue)](#pyside2qtwidgtesroundprogressbarsetmaximummax)
 * [def setRange(minValue, maxValue)](#pyside2qtwidgtesroundprogressbarsetrangemin-max)
 * [def setInitialPos(positionFlag)](#pyside2qtwidgtesroundprogressbarinitialpospositionflags)
 * [def setValue(value)](#pyside2qtwidgtesroundprogressbarsetvaluevalue)
@@ -36,7 +36,7 @@ RoundProgressBar widget provides a fully customizable round progress bar with 6 
 * [def setGeometry(posX, posY)](#pyside2qtwidgtesroundprogressbarsetgeometryposx-posy)
 * [def setLineWidth(width)](#pyside2qtwidgtesroundprogressbarsetlinewidthwidth)
 * [def setLineColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsetlinecolorr-g-b)
-* [def setPathColor((R, G, B))](#pyside2qtwidgtesroundprogressbarsetpathcolorr-g-b)
+* [def setPathColor(QColor(R, G, B))](#pyside2qtwidgtesroundprogressbarsetpathcolorr-g-b)
 * [def setPathWidth(width)](#pyside2qtwidgtesroundprogressbarsetpathwidthwidth)
 * [def setDirection(directionFlag)](#pyside2qtwidgtesroundprogressbarsetdirectiondirectionflag)
 * [def setBarStyle(styleFlag)](#pyside2qtwidgtesroundprogressbarsetbarstylestyleflag)
@@ -72,7 +72,7 @@ You can specify the minimum and maximum number of steps with `setMinimum()` and 
 
 ### Naming Convention 
 
-As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use custom name for the methods in the RoundProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So  to modify the round progress bar style, text, color, etc each time, the method name has to be called with a **prefix of ``** . So the idea remains the same, eg: that if you want to set the maximum value of progress bar, call the method `setMaximum()` and pass the maximum as an argument. This method applies to all other method used in this class.
+As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use custom name for the methods in the RoundProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So  to modify the round progress bar style, text, color, etc each time, the method name has to be called with a **prefix of ``** . So the idea remains the same, eg: that if you want to set the maximum value of progress bar, call the method `setMaximumValue()` and pass the maximum as an argument. This method applies to all other method used in this class.
 
 The Round Progress Bar Consist of **5 parts**: **Text**, **Line**, **Path**, **Circle** and **Pie**. Each of this can be modified individually in terms of color, size etc.
 
@@ -161,7 +161,7 @@ By default the maximum size is the size of the canvas itself, i.e. dynamic size 
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setMinimum(min)***
+### ***PySide2.QtWidgtes.RoundProgressBar.setMinimumValue(min)***
 
 **Parameters** : min value for the progress bar
 
@@ -173,7 +173,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setMaximum(max)***
+### ***PySide2.QtWidgtes.RoundProgressBar.setMaximumValue(max)***
 
 **Parameters** : max value for the progress bar
 
@@ -318,17 +318,17 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.RoundProgressBar.setPathColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.setPathColor(QColor)***
 
 **Parameters**: tuple of R, G, B
 
 Changes the color of the path to the specified R, G, B spectrum. 
 
-By default path color is : (218, 218, 218)
+By default path color is : QColor(218, 218, 218)
 
 ```python
 #CHANGE THE PATH COLOR
-self.rpb.setPathColor((0, 0, 0)) #CHANGING THE PATH COLOR TO BLACK
+self.rpb.setPathColor(QColor(0, 0, 0)) #CHANGING THE PATH COLOR TO BLACK
 ```
 
 <p align="center">
@@ -487,7 +487,7 @@ Choosing the value will display the raw value of the progress, while setting it 
 
 ```python
 #TEXT TYPE
-self.rpb.setMaximum(360)
+self.rpb.setMaximumValue(360)
 self.rpb.setTextFormat('Value') #SET THE TEXT TYPE TO VALUE
 self.rpb.setValue(180)
 ```
@@ -498,7 +498,7 @@ self.rpb.setValue(180)
 
 
 ```python
-self.rpb.setMaximum(360)
+self.rpb.setMaximumValue(360)
 self.rpb.setTextFormat('Percentage') #SET THE TEXT TYPE TO PERCENTAGE
 self.rpb.setValue(180)
 ```
