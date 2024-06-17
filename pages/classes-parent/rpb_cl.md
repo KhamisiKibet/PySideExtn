@@ -234,7 +234,6 @@ By Default value is set at 12%
 
 ```python
 #USING THE SETVALUE METHOD:
-self.rpb.rpb_setValue(96)
 self.rpb.setValue(96)
 ```
 
