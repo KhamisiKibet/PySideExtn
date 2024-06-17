@@ -110,7 +110,7 @@ As seen each of the above property and much more can be changes, refer below:
 
 See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
 
-## Class roundProgressBar()
+## Class RoundProgressBar()
 
 Construct a round progress bar with given parent
 
@@ -120,13 +120,13 @@ By default: This gives us a `Donet` type of round progress bar with minimum and 
 #INITIALISING A NEW ROUND PROGRESS BAR
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySide2exnt.RoundProgressBar import roundProgressBar #IMPORT THE MODULES
+from PySide2exnt.RoundProgressBar import RoundProgressBar #IMPORT THE MODULES
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
 
-        self.rpb = roundProgressBar() #CREATING A ROUND PROGRESS BAR OBJECT
+        self.rpb = RoundProgressBar() #CREATING A ROUND PROGRESS BAR OBJECT
         
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.rpb)
@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setMinimumSize(width, height)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setMinimumSize(width, height)***
 
 **Parameters** : width, height in `int`
 
@@ -151,7 +151,7 @@ By Default the minimum size is set to 12*size of line width.
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setMaximumSize(width, height)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setMaximumSize(width, height)***
 
 **Parameters** : width, height in `int`
 
@@ -161,7 +161,7 @@ By default the maximum size is the size of the canvas itself, i.e. dynamic size 
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setMinimum(min)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setMinimum(min)***
 
 **Parameters** : min value for the progress bar
 
@@ -173,7 +173,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setMaximum(max)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setMaximum(max)***
 
 **Parameters** : max value for the progress bar
 
@@ -185,7 +185,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setRange(min, max)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setRange(min, max)***
 
 **Parameter** : min and max range
 
@@ -197,7 +197,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_InitialPos(positionFlags)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_InitialPos(positionFlags)***
 
 **Parameter**: Position Flag: `North`, `South`, `East` `West` as string.
 
@@ -224,7 +224,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setValue(value)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setValue(value)***
 
 **Parameter**: value in `int`
 
@@ -244,13 +244,13 @@ self.rpb.rpb_setValue(96)
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_reset()***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_reset()***
 
 Makes the progress pointer to the minimum value. i.e. 0%.
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setGeometry(posX, posY)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setGeometry(posX, posY)***
 
 **Parameter**: posX and posY in `int`
 
@@ -258,7 +258,7 @@ This moves the origin coordinated of the round progress bar from (0, 0) to (posX
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setLineWidth(width)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setLineWidth(width)***
 
 **Parameter**: width in `int`
 
@@ -276,7 +276,7 @@ self.rpb.rpb_setLineWidth(10)
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setLineColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setLineColor((R, G, B))***
 
 **Parameters**: tuple of R, G, B
 
@@ -298,7 +298,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setPathWidth(width)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setPathWidth(width)***
 
 **Parameter**: width in `int`
 
@@ -318,7 +318,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setPathColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setPathColor((R, G, B))***
 
 **Parameters**: tuple of R, G, B
 
@@ -340,7 +340,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setDirection(directionFlag)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setDirection(directionFlag)***
 
 **Parameter**: Direction Flag: `Clockwise` or `AntiClockwise` as string.
 
@@ -357,7 +357,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setBarStyle(styleFlag)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setBarStyle(styleFlag)***
 
 **Parameter**: Style Flags: `Donet`, `Line`, `Pizza`, `Pie`, `Hybrid1` and `Hybrid2` as string.
 
@@ -387,7 +387,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setLineCap(linecapFlags)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setLineCap(linecapFlags)***
 
 **Parameter**: Line Cap Flags: `SquareCap` and `RoundCap` as string.
 
@@ -409,7 +409,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setLineStyle(linestyleflags)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setLineStyle(linestyleflags)***
 
 **Parameters**: Line Style Flags: `SolidLine`, `DotLine` and `DashLine` as string.
 
@@ -439,7 +439,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setTextColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setTextColor((R, G, B))***
 
 **Parameter**: Tuple in the form : R, G, B
 
@@ -459,7 +459,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setTextFont(fontFlags)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setTextFont(fontFlags)***
 
 **Parameters**: Font names like  `Arial`, `Segoe UI`, `Times` , `Times New Roman` e.t.c. default fonts of windows/linux/macOS.
 
@@ -479,7 +479,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setTextFormat(typeflags)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setTextFormat(typeflags)***
 
 **Parameter**: Text type flags: `Value` or `Percentage` as string
 
@@ -513,7 +513,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setTextRatio(ratio)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setTextRatio(ratio)***
 
 **Parameters**: ratio in `int` 
 
@@ -533,7 +533,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setTextWidth(width)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setTextWidth(width)***
 
 **Parameters**: width in `int`
 
@@ -554,7 +554,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setCircleColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setCircleColor((R, G, B))***
 
 **Parameters**: Tuple in the form : R, G, B
 
@@ -577,7 +577,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setCircleRatio(ratio)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setCircleRatio(ratio)***
 
 **Parameter**: ratio in `int`
 
@@ -595,7 +595,7 @@ self.rpb.rpb_setCircleRatio(0.5) #MAKES THE CIRCLE 0.5*SIZE OF THE PROGRESS BAR
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setPieColor((R, G, B))***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setPieColor((R, G, B))***
 
 **Parameters**: Tuple in the form : R, G, B
 
@@ -619,7 +619,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_setPieRatio(ratio)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_setPieRatio(ratio)***
 
 **Parameter**: ratio in `int`
 
@@ -640,7 +640,7 @@ self.rpb.rpb_setPieRatio(0.9)
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_enableText(bool)***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_enableText(bool)***
 
 **Parameter**: `True` or `False` 
 
@@ -648,7 +648,7 @@ Enable or disable the text inside the round progress bar.
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_getSize()***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_getSize()***
 
 **Return**:  `int`
 
@@ -656,7 +656,7 @@ This method returns the size of the round progress bar in `int`.
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_getValue()***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_getValue()***
 
 **Return**: `int`
 
@@ -664,7 +664,7 @@ This method returns the current value displayed by the round progress bar in `in
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_getRange()***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_getRange()***
 
 **Return**: tuple of (minimum, maximum)
 
@@ -672,7 +672,7 @@ Returns the maximum and minimum value of the round progress bar.
 
 ***
 
-### ***PySide2.QtWidgtes.roundProgressBar.rpb_getTextWidth()***
+### ***PySide2.QtWidgtes.RoundProgressBar.rpb_getTextWidth()***
 
 **Return**: `int`.
 
