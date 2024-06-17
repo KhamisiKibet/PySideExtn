@@ -103,9 +103,9 @@ Whenever you create a spiral progress class object you will be presented with a 
 * **Path Width:** Same as the Line Width
 * **Path Color:** ((179, 241, 215), (179, 241, 215), (179, 241, 215))
 
-## Class spiralProgressBar()
+## Class SpiralProgressBar()
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setMaximumSize(width, height)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMaximumSize(width, height)***
 
 **Parameters**: width, height in `int`
 
@@ -113,7 +113,7 @@ Set the maximum size of the progress bar by passing width and height as argument
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setMinimumSize(width, height)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMinimumSize(width, height)***
 
 **Parameters** : width, height in `int`
 
@@ -121,7 +121,7 @@ Set the minimum size of the progress bar by passing width and height as argument
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setNoProgressBar(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setNoProgressBar(int)***
 
 **Parameters**:  Number of Concentric Progress Bar in `int`
 
@@ -131,7 +131,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setValue(value tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setValue(value tuple)***
 
 **Parameters**: Value in `tuple`
 
@@ -141,7 +141,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setMaximum(max tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMaximum(max tuple)***
 
 **Parameters**: Maximum Value as a `tuple`
 
@@ -152,7 +152,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setMinimum(min tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setMinimum(min tuple)***
 
 **Parameters**: Minimum Value as a `tuple`
 
@@ -162,7 +162,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setRange(min tuple, max tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setRange(min tuple, max tuple)***
 
 **Parameters**: Maximum and Minimum passed as a `tuple`
 
@@ -172,7 +172,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setGap(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setGap(int)***
 
 **Parameters**: Gap between the lines in `int`
 
@@ -182,7 +182,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setInitialPos(position tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setInitialPos(position tuple)***
 
 **Parameters**: Starting position of the Progress bar as tuple.
 
@@ -198,7 +198,7 @@ See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExampl
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setGeometry(x, y)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setGeometry(x, y)***
 
 **Parameters**: Position of the spiral progress bar: x and y in `int`
 
@@ -206,7 +206,7 @@ The geometry function can be effectively used in cases when the user wants to cu
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setDirection(dir tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setDirection(dir tuple)***
 
 **Parameters**: Direction as `tuple`
 
@@ -216,7 +216,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_reset()***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_reset()***
 
 **Parameters**: Nil
 
@@ -224,7 +224,7 @@ This function resets the spiral progress bar to a minimum value i.e. to 0%.
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.variableWidth(bool)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.variableWidth(bool)***
 
 **Parameters**: `bool`
 
@@ -234,7 +234,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_widthIncrement(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_widthIncrement(int)***
 
 **Parameters**: Increment as `int`
 
@@ -244,7 +244,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_lineWidth(int)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineWidth(int)***
 
 **Parameters**: Width in `int`
 
@@ -254,7 +254,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_lineColor(color tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineColor(color tuple)***
 
 **Parameters**: Color in `tuple`
 
@@ -264,7 +264,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_lineStyle(style tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineStyle(style tuple)***
 
 **Parameters**: style string as an element of a `tuple`
 
@@ -275,7 +275,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_lineCap(cap tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_lineCap(cap tuple)***
 
 **Parameters**: Cap in `tuple`
 
@@ -286,7 +286,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_setPathHidden(bool)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_setPathHidden(bool)***
 
 **Parameters**: `bool`
 
@@ -296,7 +296,7 @@ See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamp
 
 ***
 
-### ***PySide2.QtWidgtes.spiralProgressBar.spb_pathColor(color tuple)***
+### ***PySide2.QtWidgtes.SpiralProgressBar.spb_pathColor(color tuple)***
 
 **Parameters**: Color in `tuple`
 
