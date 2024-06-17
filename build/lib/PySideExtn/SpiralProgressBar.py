@@ -6,7 +6,7 @@
 #           by the Qt Frame work (or atleast for Python version of Qt).                     #
 # VERSION:  v1.0.0                                                                          #
 # NOTES:    CLASS : SpiralProgressBar : Can be accessed by : importing                      #
-#           from PySideExtn.SpiralProgressBar import spiralProgressBar                     #
+#           from PySideExtn.SpiralProgressBar import SpiralProgressBar                     #
 # REFER:    Github: https://github.com/anjalp/PySideExtn                                   #
 #############################################################################################
 
@@ -15,30 +15,30 @@ from qtpy import QtWidgets, QtCore
 from qtpy.QtCore import Qt, QSize
 from qtpy.QtGui import QBrush, QColor, QPainter, QPen, QPaintEvent, QFont
 
-class spiralProgressBar(QtWidgets.QWidget):
+class SpiralProgressBar(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
-        super(spiralProgressBar, self).__init__(parent)
+        super(SpiralProgressBar, self).__init__(parent)
 
         self.positionX = 0 
         self.positionY = 0
-        self.spb_Size = 0
+        self.Size = 0
         self.posFactor = 0
         self.sizeFactor = 0
 
-        self.spb_maximSize = (0, 0)
-        self.spb_minimSize = (0, 0)
+        self.maximSize = (0, 0)
+        self.minimSize = (0, 0)
 
-        self.spb_dynamicMin = True
-        self.spb_dynamicMax = True
+        self.dynamicMin = True
+        self.dynamicMax = True
 
         self.noProgBar = 3
 
-        self.spb_value = [-48*16, -24*16, -12*16]
-        self.spb_minimValue = [0, 0, 0]
-        self.spb_maximValue = [100, 100, 100]
-        self.spb_startPos = [self.startPosFlags.North, self.startPosFlags.North, self.startPosFlags.North]
-        self.spb_direction = [self.rotationFlags.Clockwise, self.rotationFlags.Clockwise, self.rotationFlags.Clockwise]
+        self.value = [-48*16, -24*16, -12*16]
+        self.minimValue = [0, 0, 0]
+        self.maximValue = [100, 100, 100]
+        self.startPos = [self.startPosFlags.North, self.startPosFlags.North, self.startPosFlags.North]
+        self.direction = [self.rotationFlags.Clockwise, self.rotationFlags.Clockwise, self.rotationFlags.Clockwise]
 
         self.lineWidth = 5
         self.lineColor = [[0, 159, 227], [0, 159, 227], [0, 159, 227]]
@@ -53,9 +53,9 @@ class spiralProgressBar(QtWidgets.QWidget):
         self.pathStyle = [self.lineStyleFlags.SolidLine, self.lineStyleFlags.SolidLine, self.lineStyleFlags.SolidLine]
         self.pathIndepend = False
 
-        self.spb_gap = self.lineWidth*2   #GAP BETWEEN THE ROUNDPROGRESS BAR MAKING A SPIRAL PROGRESS BAR.
+        self.gap = self.lineWidth*2   #GAP BETWEEN THE ROUNDPROGRESS BAR MAKING A SPIRAL PROGRESS BAR.
         self.gapCngd = False
-        self.spb_cngSize = 1
+        self.cngSize = 1
 
 #------------------------------------------------------CLASS ENUMERATORS
     class lineStyleFlags:
@@ -79,7 +79,7 @@ class spiralProgressBar(QtWidgets.QWidget):
 
 #------------------------------------------------------METHODS FOR CHANGING THE PROPERTY OF THE SPIRALPROGRESSBAR :SOLTS
 
-    def spb_setMinimumSize(self, width, height):
+    def setMinimumSize(self, width, height):
         """
         Minimum Size of the Widget
         ...
@@ -97,13 +97,13 @@ class spiralProgressBar(QtWidgets.QWidget):
         --------------
         none
         """
-        self.spb_dynamicMin = False
+        self.dynamicMin = False
         self.setMinimumSize(width, height)
-        self.spb_minimSize = (width, height)
+        self.minimSize = (width, height)
         self.update()
 
 
-    def spb_setMaximumSize(self, width, height):
+    def setMaximumSize(self, width, height):
         """
         Maximum Size of the Widget
         ...
@@ -121,15 +121,15 @@ class spiralProgressBar(QtWidgets.QWidget):
         --------------
         none
         """
-        self.spb_dynamicMax = False
+        self.dynamicMax = False
         self.setMaximumSize(width, height)
-        self.spb_maximSize = (width, height)
+        self.maximSize = (width, height)
         self.update()
 
 
-    def spb_setNoProgressBar(self, num):
+    def setNoProgressBar(self, num):
         """
-        By default the Number of progress bar in spiralProgressBar is: 3,
+        By default the Number of progress bar in SpiralProgressBar is: 3,
         Users can increase the number of progress bar upto 6.(min: 2), this function
         is used to do exactly that.
         ...
@@ -148,20 +148,20 @@ class spiralProgressBar(QtWidgets.QWidget):
             raise Exception("Supported Format: int and not: " + str(type(num)))
         if num<=6 and num>=2:
             self.noProgBar = num
-            self.spb_value = []
-            self.spb_maximValue = []
-            self.spb_minimValue = []
-            self.spb_startPos = []
-            self.spb_direction = []
+            self.value = []
+            self.maximValue = []
+            self.minimValue = []
+            self.startPos = []
+            self.direction = []
             self.lineColor = []
             self.lineStyle = []
             self.lineCap = []
             for each in range(0, self.noProgBar, 1):
-                self.spb_value.append(-12*self.noProgBar*16/(each+1))
-                self.spb_maximValue.append(100)
-                self.spb_minimValue.append(0)
-                self.spb_startPos.append(self.startPosFlags.North)
-                self.spb_direction.append(self.rotationFlags.Clockwise)
+                self.value.append(-12*self.noProgBar*16/(each+1))
+                self.maximValue.append(100)
+                self.minimValue.append(0)
+                self.startPos.append(self.startPosFlags.North)
+                self.direction.append(self.rotationFlags.Clockwise)
                 self.lineColor.append([0, 159, 227])
                 self.lineStyle.append(self.lineStyleFlags.SolidLine)
                 self.lineCap.append(self.lineCapFlags.RoundCap)
@@ -170,7 +170,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_setValue(self, value):                                 #value: TUPLE OF (value1, value2, value3)
+    def setValue(self, value):                                 #value: TUPLE OF (value1, value2, value3)
         """
         Set the current value of the Progress Bar. maximum value >= Value >= minimum Value
         The user can set the value of each progress bar within the spiralprogressbar independely.
@@ -189,10 +189,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(value)!=type(()):                                  #IF INPUT IS NOT A TUPLE
@@ -201,19 +201,19 @@ class spiralProgressBar(QtWidgets.QWidget):
             raise ValueError("Tuple length more than number of Progress Bars")
         elif len(value) < self.noProgBar:                        #IF INPUT TUPLE LENGTH IS LESS THAN THE NUMBER OF PROGRESS BAR
             raise ValueError("Tuple length less than the number of Progress Bars")
-        elif self.spb_value!=value:                                #IF EVERY THING GOES RIGHT
+        elif self.value!=value:                                #IF EVERY THING GOES RIGHT
             for each in range(0, self.noProgBar, 1):
                 if value[each]!='nc':                           #nc: NOC CHANGE STRING FOR ELEIMINATING THE NO CHANGE PROGRESS VALUES
-                    if value[each] < self.spb_minimValue[each]:
-                        spiralProgressBar.convValue(self, self.spb_minimValue[each], each)
-                    elif value[each] > self.spb_maximValue[each]:
-                        spiralProgressBar.convValue(self, self.spb_maximValue[each], each)
+                    if value[each] < self.minimValue[each]:
+                        SpiralProgressBar.convValue(self, self.minimValue[each], each)
+                    elif value[each] > self.maximValue[each]:
+                        SpiralProgressBar.convValue(self, self.maximValue[each], each)
                     else:
-                        spiralProgressBar.convValue(self, value[each], each)
+                        SpiralProgressBar.convValue(self, value[each], each)
             self.update()
 
 
-    def spb_setMaximum(self, maxVal):
+    def setMaximum(self, maxVal):
         """
         Maximum Value of the progressbar, default is 100.
         ...
@@ -231,10 +231,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(maxVal)!=type(()):                              #IF INPUT IS NOT A TUPLE
@@ -243,15 +243,15 @@ class spiralProgressBar(QtWidgets.QWidget):
             raise ValueError("Tuple length more than number of Progress Bars")
         elif len(maxVal) < self.noProgBar:                        #IF INPUT TUPLE LENGTH IS LESS THAN THE NUMBER OF PROGRESS BAR
             raise ValueError("Tuple length less than the number of Progress Bars")
-        elif self.spb_maximValue!=maxVal:
+        elif self.maximValue!=maxVal:
             for each in range(0, self.noProgBar, 1):               #TO AVOID FUTURE DIVISION BY ZERO ERROR
-                if maxVal[each]==self.spb_minimValue[each]:
+                if maxVal[each]==self.minimValue[each]:
                     raise ValueError("Maximum and Minimum Value Cannot be the Same")
-            self.spb_maximValue = list(maxVal)
+            self.maximValue = list(maxVal)
             self.update()
 
 
-    def spb_setMinimum(self, minVal):
+    def setMinimum(self, minVal):
         """
         Minimum Value of the progressbar, default is 0.
         ...
@@ -269,10 +269,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(minVal)!=type(()):                              #IF INPUT IS NOT A TUPLE
@@ -281,15 +281,15 @@ class spiralProgressBar(QtWidgets.QWidget):
             raise ValueError("Tuple length more than number of Progress Bars")
         elif len(minVal) < self.noProgBar:                        #IF INPUT TUPLE LENGTH IS LESS THAN THE NUMBER OF PROGRESS BAR
             raise ValueError("Tuple length less than the number of Progress Bars")
-        elif self.spb_minimValue!=minVal:
+        elif self.minimValue!=minVal:
             for each in range(0, self.noProgBar, 1):               #TO AVOID FUTURE DIVISION BY ZERO ERROR
-                if minVal[each]==self.spb_maximValue[each]:
+                if minVal[each]==self.maximValue[each]:
                     raise ValueError("Maximum and Minimum Value Cannot be the Same")
-            self.spb_minimValue = list(minVal)
+            self.minimValue = list(minVal)
             self.update()
 
 
-    def spb_setRange(self, minTuple, maxTuple):
+    def setRange(self, minTuple, maxTuple):
         """
         This function does the job of setting the Maximum value and Minimum value in one go.
         ...
@@ -312,10 +312,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(minTuple)!=type(()) or type(maxTuple)!=type(()):
@@ -327,14 +327,14 @@ class spiralProgressBar(QtWidgets.QWidget):
         for each in range(0, self.noProgBar, 1):
             if minTuple[each]==maxTuple[each]:
                 raise ValueError("Minimum and Maximum cannot be the Same")
-        self.spb_minimValue = minTuple
-        self.spb_maximValue = maxTuple
+        self.minimValue = minTuple
+        self.maximValue = maxTuple
         self.update()
 
 
-    def spb_setGap(self, gap):
+    def setGap(self, gap):
         """
-        Set the Gap between each concentric circle in the spiralProgressBar.
+        Set the Gap between each concentric circle in the SpiralProgressBar.
         Default is : gap = 2*line width
         ...
 
@@ -353,12 +353,12 @@ class spiralProgressBar(QtWidgets.QWidget):
         if type(gap)!=type(5):
             raise ValueError("Gap should be an integer and not: " + str(type(gap)))
         else:
-            self.spb_gap = gap
+            self.gap = gap
             self.gapCngd = True
             self.update()
 
 
-    def spb_setInitialPos(self, position):
+    def setInitialPos(self, position):
         """
         Sets the statring point of the progress bar or the 0% position.
         Default is 'North'
@@ -378,10 +378,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(position)!=type(()):                                  #IF INPUT IS NOT A TUPLE
@@ -395,19 +395,19 @@ class spiralProgressBar(QtWidgets.QWidget):
                 if type(position[each])!=type("string"):
                     raise Exception("Position Tuple elements should be String and not: " + str(type(position[each])))
                 elif position[each]=='North':
-                    self.spb_startPos[each] = self.startPosFlags.North
+                    self.startPos[each] = self.startPosFlags.North
                 elif position[each]=='South':
-                    self.spb_startPos[each] = self.startPosFlags.South
+                    self.startPos[each] = self.startPosFlags.South
                 elif position[each]=='East':
-                    self.spb_startPos[each] = self.startPosFlags.East
+                    self.startPos[each] = self.startPosFlags.East
                 elif position[each]=='West':
-                    self.spb_startPos[each] = self.startPosFlags.West
+                    self.startPos[each] = self.startPosFlags.West
                 else:
                     raise Exception("Position can hold Property: 'North', 'South', 'East' and 'West' and not: " + position[each])
             self.update()
 
 
-    def spb_reset(self):
+    def reset(self):
         """
         Resets the progress bar to the 0%.
         ...
@@ -422,11 +422,11 @@ class spiralProgressBar(QtWidgets.QWidget):
         """
 
         for each in range(0, self.noProgBar, 1):
-            spiralProgressBar.convValue(self, self.spb_minimValue[each], each)
+            SpiralProgressBar.convValue(self, self.minimValue[each], each)
         self.update()
 
 
-    def spb_setGeometry(self, posX, posY):
+    def setGeometry(self, posX, posY):
         """
         This module changes the position of the widget. Default it is : (0, 0).
         ...
@@ -456,7 +456,7 @@ class spiralProgressBar(QtWidgets.QWidget):
         self.update()
 
 
-    def spb_setDirection(self, direction):
+    def setDirection(self, direction):
         """
         Direction of rotation of the spiral progress bar.
         ...
@@ -474,10 +474,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         Exception : "Direction Tuple elements should be String"
             Rasies when the elements of the tuple is not a string.
@@ -494,9 +494,9 @@ class spiralProgressBar(QtWidgets.QWidget):
                 if type(direction[each])!=type("String"):
                     raise Exception("Direction Tuple elements should be String and not: " + str(type(direction[each])))
                 elif direction[each]=='Clockwise':
-                    self.spb_direction[each] = self.rotationFlags.Clockwise
+                    self.direction[each] = self.rotationFlags.Clockwise
                 elif direction[each]=='AntiClockwise':
-                    self.spb_direction[each] = self.rotationFlags.AntiClockwise
+                    self.direction[each] = self.rotationFlags.AntiClockwise
                 else:
                     raise Exception("Direction can hold Property: 'Clockwise'/'AntiClockwise' and not: " + str(type(direction[each])))
             self.update()
@@ -525,7 +525,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_widthIncrement(self, increm):
+    def widthIncrement(self, increm):
         """
         Width increment for incrment in the line width. Default is 1px. User can sepcify the
         amount of px to increment form the outer to inner circle progressbar.
@@ -549,7 +549,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_lineWidth(self, width):
+    def lineWidth(self, width):
         """
         Line width of the circles in the spiral progress bar.
         ...
@@ -569,11 +569,11 @@ class spiralProgressBar(QtWidgets.QWidget):
         else:
             self.lineWidth = width
             if self.gapCngd!=True:
-                self.spb_gap = self.lineWidth*2
+                self.gap = self.lineWidth*2
             self.update()
 
 
-    def spb_lineColor(self, color):
+    def lineColor(self, color):
         """
         Color of line in the spiral progress bar. Each concentric progress bar has its own color settings. 
         ...
@@ -591,10 +591,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(color)!=type(()):
@@ -614,7 +614,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_lineStyle(self, style):
+    def lineStyle(self, style):
         """
         line style of the spiral progress bar.
         ...
@@ -632,10 +632,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(style)!=type(()):
@@ -659,7 +659,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_lineCap(self, cap):
+    def lineCap(self, cap):
         """
         Cap i.e. the end of the line : to be Round or Square.
         ...
@@ -677,10 +677,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
         
         if type(cap)!=type(()):
@@ -702,7 +702,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.update()
 
 
-    def spb_setPathHidden(self, hide):
+    def setPathHidden(self, hide):
         """
         Hides the path in the spiral progress bar.
         ...
@@ -724,7 +724,7 @@ class spiralProgressBar(QtWidgets.QWidget):
         else:
             self.pathPresent = True
 
-    def spb_pathColor(self, color):
+    def pathColor(self, color):
         """
         Color of path in the spiral progress bar. Each concentric progress bar has its own color settings. 
         ...
@@ -742,10 +742,10 @@ class spiralProgressBar(QtWidgets.QWidget):
             Rasied when the user passes a non-tuple data type to the module.
 
         ValueError : "Tuple length more than number of Progress Bars"
-            Raised when the tuple contains more element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains more element than the number of concentric progress bar in the SpiralProgressBar widget.
 
         ValueError : "Tuple length less than the number of Progress Bars"
-            Raised when the tuple contains less element than the number of concentric progress bar in the spiralProgressBar widget.
+            Raised when the tuple contains less element than the number of concentric progress bar in the SpiralProgressBar widget.
         """
 
         if type(color)!=type(()):
@@ -770,7 +770,7 @@ class spiralProgressBar(QtWidgets.QWidget):
 #------------------------------------------------------ENGINE: WHERE ALL THE REAL STUFF TAKE PLACE: WORKING OF THE SPIRALPROGRESSBAR
 
 
-    def spb_MinimumSize(self, dynMax, minim, maxim):
+    def MinimumSize(self, dynMax, minim, maxim):
         """
         Realtime automatic minimum size determiner for the spiral progress bar.
         For this to achieve the function first checks the size of the layout, where the spiralprogressbar lies.
@@ -787,19 +787,19 @@ class spiralProgressBar(QtWidgets.QWidget):
         none.
         """
 
-        spb_Height = self.height()
-        spb_Width = self.width()
+        Height = self.height()
+        Width = self.width()
 
         if dynMax:
-            if spb_Width >= spb_Height and spb_Height >= minim[1]:
-                self.spb_Size = spb_Height
-            elif spb_Width < spb_Height and spb_Width >= minim[0]:
-                self.spb_Size = spb_Width
+            if Width >= Height and Height >= minim[1]:
+                self.Size = Height
+            elif Width < Height and Width >= minim[0]:
+                self.Size = Width
         else:
-            if spb_Width >= spb_Height and spb_Height <= maxim[1]:
-                self.spb_Size = spb_Height
-            elif spb_Width < spb_Height and spb_Width <= maxim[0]:
-                self.spb_Size = spb_Width
+            if Width >= Height and Height <= maxim[1]:
+                self.Size = Height
+            elif Width < Height and Width <= maxim[0]:
+                self.Size = Width
 
 
     def geometricFactor(self):
@@ -835,8 +835,8 @@ class spiralProgressBar(QtWidgets.QWidget):
         none.
         """
 
-        self.spb_value[pos] = ((value - self.spb_minimValue[pos])/(self.spb_maximValue[pos] - self.spb_minimValue[pos]))*360*16
-        self.spb_value[pos] = self.spb_direction[pos]*self.spb_value[pos]
+        self.value[pos] = ((value - self.minimValue[pos])/(self.maximValue[pos] - self.minimValue[pos]))*360*16
+        self.value[pos] = self.direction[pos]*self.value[pos]
 
 
 
@@ -854,11 +854,11 @@ class spiralProgressBar(QtWidgets.QWidget):
         none.
         """
 
-        if self.spb_dynamicMin:
+        if self.dynamicMin:
             self.setMinimumSize(QSize(self.lineWidth*6 + self.pathWidth*6, self.lineWidth*6 + self.pathWidth*6))
 
-        spiralProgressBar.spb_MinimumSize(self, self.spb_dynamicMax, self.spb_minimSize, self.spb_maximSize)
-        spiralProgressBar.geometricFactor(self)
+        SpiralProgressBar.MinimumSize(self, self.dynamicMax, self.minimSize, self.maximSize)
+        SpiralProgressBar.geometricFactor(self)
         spiralIncrem = 0
         spiralIncrem2 = 0
 
@@ -871,7 +871,7 @@ class spiralProgressBar(QtWidgets.QWidget):
                 if self.varWidth==True:   #CREAETS A INCREASING OR DECREASING TYPE OF WITH 
                     self.tempWidth = self.tempWidth + self.widthIncr
                     if self.gapCngd!=True:
-                        self.spb_gap = self.tempWidth*2
+                        self.gap = self.tempWidth*2
                 self.pathPainter = QPainter(self)
                 self.pathPainter.setRenderHint(QPainter.Antialiasing)
                 self.penPath = QPen()
@@ -879,9 +879,9 @@ class spiralProgressBar(QtWidgets.QWidget):
                 self.penPath.setWidth(self.tempWidth)
                 self.penPath.setBrush(QColor(self.pathColor[path][0], self.pathColor[path][1], self.pathColor[path][2]))
                 self.pathPainter.setPen(self.penPath)
-                self.pathPainter.drawArc(self.positionX + self.posFactor + self.spb_cngSize*spiralIncrem2, self.positionY + self.posFactor + self.spb_cngSize*spiralIncrem2, self.spb_Size - self.sizeFactor - 2*self.spb_cngSize*spiralIncrem2, self.spb_Size - self.sizeFactor - 2*self.spb_cngSize*spiralIncrem2, self.spb_startPos[path], 360*16)
+                self.pathPainter.drawArc(self.positionX + self.posFactor + self.cngSize*spiralIncrem2, self.positionY + self.posFactor + self.cngSize*spiralIncrem2, self.Size - self.sizeFactor - 2*self.cngSize*spiralIncrem2, self.Size - self.sizeFactor - 2*self.cngSize*spiralIncrem2, self.startPos[path], 360*16)
                 self.pathPainter.end()
-                spiralIncrem2 = spiralIncrem2 + self.spb_gap
+                spiralIncrem2 = spiralIncrem2 + self.gap
                 
 
         self.tempWidth = self.lineWidth   #TEMPWIDTH TEMPORARLY STORES THE LINEWIDTH, USEFUL IN VARIABLE WIDTH OPTION.
@@ -889,7 +889,7 @@ class spiralProgressBar(QtWidgets.QWidget):
             if self.varWidth==True:   #CREAETS A INCREASING OR DECREASING TYPE OF WITH 
                 self.tempWidth = self.tempWidth + self.widthIncr
                 if self.gapCngd!=True:
-                    self.spb_gap = self.tempWidth*2
+                    self.gap = self.tempWidth*2
             self.linePainter = QPainter(self)
             self.linePainter.setRenderHint(QPainter.Antialiasing)
             self.penLine = QPen()
@@ -898,9 +898,9 @@ class spiralProgressBar(QtWidgets.QWidget):
             self.penLine.setCapStyle(self.lineCap[bar])
             self.penLine.setBrush(QColor(self.lineColor[bar][0], self.lineColor[bar][1], self.lineColor[bar][2]))
             self.linePainter.setPen(self.penLine)
-            self.linePainter.drawArc(self.positionX + self.posFactor + self.spb_cngSize*spiralIncrem, self.positionY + self.posFactor + self.spb_cngSize*spiralIncrem, self.spb_Size - self.sizeFactor - 2*self.spb_cngSize*spiralIncrem, self.spb_Size - self.sizeFactor - 2*self.spb_cngSize*spiralIncrem, self.spb_startPos[bar], self.spb_value[bar])
+            self.linePainter.drawArc(self.positionX + self.posFactor + self.cngSize*spiralIncrem, self.positionY + self.posFactor + self.cngSize*spiralIncrem, self.Size - self.sizeFactor - 2*self.cngSize*spiralIncrem, self.Size - self.sizeFactor - 2*self.cngSize*spiralIncrem, self.startPos[bar], self.value[bar])
             self.linePainter.end()
-            spiralIncrem = spiralIncrem + self.spb_gap
+            spiralIncrem = spiralIncrem + self.gap
 
 
 #------------------------------------------------------
