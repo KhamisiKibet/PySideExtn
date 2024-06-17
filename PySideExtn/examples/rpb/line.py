@@ -1,33 +1,33 @@
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from RoundProgressBar import roundProgressBar
+from RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
-        self.rpb3 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
+        self.rpb3 = RoundProgressBar()
 
         #LINE WIDTH 
-        self.rpb.rpb_setLineWidth(10)
+        self.rpb.setLineWidth(10)
 
         #LINE CAP
-        self.rpb.rpb_setLineCap('RoundCap')
-        self.rpb2.rpb_setLineCap('SquareCap')
-        self.rpb3.rpb_setLineCap('RoundCap')
+        self.rpb.setLineCap('RoundCap')
+        self.rpb2.setLineCap('SquareCap')
+        self.rpb3.setLineCap('RoundCap')
 
         #LINE STYLE
-        self.rpb3.rpb_setLineStyle('DotLine')
-        self.rpb2.rpb_setLineStyle('DashLine')
+        self.rpb3.setLineStyle('DotLine')
+        self.rpb2.setLineStyle('DashLine')
         
         #SETTING THE VALUE
-        self.rpb.rpb_setValue(85)
-        self.rpb2.rpb_setValue(85)
-        self.rpb3.rpb_setValue(85)
+        self.rpb.setValue(85)
+        self.rpb2.setValue(85)
+        self.rpb3.setValue(85)
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addWidget(self.rpb)
