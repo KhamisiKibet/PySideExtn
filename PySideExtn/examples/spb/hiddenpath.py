@@ -1,7 +1,7 @@
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -9,13 +9,13 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
-        self.spbN.spb_lineWidth(15)
+        self.spbN.lineWidth(15)
 
-        self.spbN.spb_setPathHidden(True)
+        self.spbN.setPathHidden(True)
 
-        self.spbN.spb_setValue((55, 15, 69))
+        self.spbN.setValue((55, 15, 69))
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addWidget(self.spbN)
