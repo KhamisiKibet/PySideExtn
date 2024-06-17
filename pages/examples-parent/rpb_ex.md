@@ -16,7 +16,7 @@ These Example codes are written using the PySide2 Python Package, but the same c
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.RoundProgressBar import RoundProgressBar #IMPORT THE EXTENSION LIBRARY
 
 x = 0
 p = 1
@@ -31,7 +31,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
         #CREATING THE ROUND PROGRESS BAR OBJECT
-        self.rpb = roundProgressBar()
+        self.rpb = RoundProgressBar()
         
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
@@ -71,7 +71,7 @@ Output:
 In this demo, we first created an object of the Round Progress Bar:
 
 ```python
-self.rpb = roundProgressBar() #CREATING THE ROUND PROGRESS BAR OBJECT
+self.rpb = RoundProgressBar() #CREATING THE ROUND PROGRESS BAR OBJECT
 ```
 
 After that calling the Round Progress Bar object to display the value of progress using:
@@ -90,16 +90,16 @@ The `rpb_setValue(value)` takes an `int` as an argument and updates to change th
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
-        self.rpb3 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
+        self.rpb3 = RoundProgressBar()
 
         #SETTING THE RANGE : 
         self.rpb.rpb_setMaximum(720) 
@@ -166,13 +166,13 @@ Example:
 ```python
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
 
-        self.rpb = roundProgressBar()
+        self.rpb = RoundProgressBar()
         self.rpb.rpb_setBarStyle('Pizza') #CHANGE THE BAR STYLE TO : 'Pizza'
 
         self.layout = QtWidgets.QVBoxLayout()
@@ -236,15 +236,15 @@ object.rpb_setPieColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE PACKAGE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CREATING THE ROUNDPROGRESSBAR CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
         
         #DEFINING THE INITIAL POSITION OF THE PROGRESS BAR
         self.rpb.rpb_setInitialPos('South') #START FROM SOUTH
@@ -286,15 +286,15 @@ if __name__ == "__main__":
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
         
         #CHANGING THE DIRECTION
         self.rpb.rpb_setDirection('Clockwise')
@@ -331,16 +331,16 @@ if __name__ == "__main__":
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
-        self.rpb3 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
+        self.rpb3 = RoundProgressBar()
 
         #SETTING THE RANGE : MIN-0 & MAX:360
         self.rpb.rpb_setRange(0, 360) 
@@ -441,16 +441,16 @@ self.rpb3.rpb_enableText(False) #SEE THE IMAGE OF 3RD ROUNDPROGRESSBAR
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
-        self.rpb3 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
+        self.rpb3 = RoundProgressBar()
 
         #LINE WIDTH 
         self.rpb.rpb_setLineWidth(10)
@@ -528,15 +528,15 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORTING THE MODULE
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
         #CLASS INSTANCE
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
 
         #CHANGING THE PROGRESSABR STYLE
         self.rpb.rpb_setBarStyle('Hybrid1')
