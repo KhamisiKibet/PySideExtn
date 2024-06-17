@@ -295,7 +295,7 @@ class MyWidget(QtWidgets.QWidget):
         self.spbN.setGap(17)
 
         #LINE COLOR
-        colorTuple = ((0, 125, 125), (125, 0, 125), (125, 255, 0), (125, 125, 125))
+        colorTuple = (QtGui.QColor(0, 125, 125), QtGui.QColor(125, 0, 125), QtGui.QColor(125, 255, 0), QtGui.QColor(125, 125, 125))
         self.spbN.setLineColor(colorTuple)
 
         #LINE STYLE
