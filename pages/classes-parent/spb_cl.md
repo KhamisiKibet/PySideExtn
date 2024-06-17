@@ -61,7 +61,7 @@ You can specify the minimum and the maximum number of steps with `spb_setMinimum
 
 ## Naming Convention
 
-As the PySide2/PyQt5 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use a *custom name* for the methods in the SpiralProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So to modify the spiral progress bar style, text, color, etc each time, the method name has to be called with a **prefix of `spb_`**. So the idea remains the same, eg: that if you want to set the maximum value of the progress bar, call the method `spb_setMaximum()` and pass the maximum tuple as an argument. This idea applies to all other methods used in this class.
+As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use a *custom name* for the methods in the SpiralProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So to modify the spiral progress bar style, text, color, etc each time, the method name has to be called with a **prefix of `spb_`**. So the idea remains the same, eg: that if you want to set the maximum value of the progress bar, call the method `spb_setMaximum()` and pass the maximum tuple as an argument. This idea applies to all other methods used in this class.
 
 The Spiral Progress Bar has **3 Parts: Line, Path, Number of Progress Bar**, *see below*
 
@@ -127,7 +127,7 @@ Set the minimum size of the progress bar by passing width and height as argument
 
 By default, the number of progress bar in the spiral progress bar is 3 but this can be increased by using this function. In this version, the maximum number of the progress bar in a single spiral progress bar is 6.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#3-initial-position)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#3-initial-position)
 
 ***
 
@@ -137,7 +137,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#3
 
 As each value of the progress bar needed to be controlled individually for maximum customizability, a simple approach is to pass the value of the whole spiral progress bar as a tuple, where the elements order matters, i.e. the first element in the tuple controls the outermost circle of the progress bar and the last element in the progress bar controls the innermost circle of the progress bar.(Refer to the above Naming Convention Section for more clarity).
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2-maximum-minimum-and-range)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#2-maximum-minimum-and-range)
 
 ***
 
@@ -148,7 +148,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2
 A function to set the maximum value of the progress bar. By default, it is set to 100. The user can individually customize the maximum for each circle in the progress bar. The function takes a tuple as an argument with elements corresponds to the maximum of each circle of the progress bar. Example:
 `spb_setMaximum((100, 200, 300))` this makes the maximum value of the outermost progress bar to 100, middle progress  bar to 200 and innermost progress bar to 300.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2-maximum-minimum-and-range)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#2-maximum-minimum-and-range)
 
 ***
 
@@ -158,7 +158,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2
 
 A function to set the minimum value of the progress bar. By default, the minimum value is 0 for all three circles. As same as setting the maximum given above the minimum also takes a tuple of minimum values of each concentric progress bar.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2-maximum-minimum-and-range)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#2-maximum-minimum-and-range)
 
 ***
 
@@ -168,7 +168,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2
 
 This function makes life easy instead of using the maximum and minimum function(described above) this function achieves the same result in one go. The minimum and maximum are passed independently by different tuples. The format is similar to what is described.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2-maximum-minimum-and-range)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#2-maximum-minimum-and-range)
 
 ***
 
@@ -178,7 +178,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#2
 
 Normally the gap between the lines is set to default 2*line width, but users can override this by using this function. This function accepts `int` corresponding to the pixels gap between two lines.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
@@ -189,7 +189,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5
 There are 4 starting positions users can use they are: `North`, `South`, `East`, and `West`. Each concentric circles can be individually positioned by passing the position as a tuple. Example:
 `spb_setInitialPos(('North', 'South', East))`:  See image Below
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#3-initial-position)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#3-initial-position)
 
 <p align="center">
   <img src="../assets/spb/spb_initpod.PNG">
@@ -212,7 +212,7 @@ The geometry function can be effectively used in cases when the user wants to cu
 
 Two ways the progress bar can move: `Clockwise` and `AntiClockwise`. Each of the circular progress bars directions can be independently set, by passing the direction as an element of the tuple.The Order of element corresponds to the outer to the inner combination.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#4-direction)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#4-direction)
 
 ***
 
@@ -230,7 +230,7 @@ This function resets the spiral progress bar to a minimum value i.e. to 0%.
 
 The width of each line can be specified by the `spb_lineWidth()` function but this sets the width to all the line elements. This can be made to change by this function, where if `True` then the width increases going from outer to the inner circles. The increment is set to 1px increment as default. But this can be changed using the function `spb_widthIncrement` see below. 
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#6-variable-width-and-width-increment)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#6-variable-width-and-width-increment)
 
 ***
 
@@ -240,7 +240,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#6
 
 The width increment is used in par with the `variableWidth()`, the default width increment of 1px is changed with `int` passed to the function. See the SpiralPorgressBar Example for more details.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#6-variable-width-and-width-increment)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#6-variable-width-and-width-increment)
 
 ***
 
@@ -250,7 +250,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#6
 
 Line width is 5px default, which can be changed to any size by using this function. It accepts an `int` in px. Remember the width specified applies to all the concentric circles in the spiral progress bar and also the path of the spiral progress bar. Also, the gap between the lines is defined as 2*line Width by default.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
@@ -260,7 +260,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5
 
 The line color function resets the default line color of the progress bar to user-specified. It accepts a tuple with elements corresponding to the color of the line of each circles in the spiral progress bar. Each element should be in the format `(R, G, B)`. Remember this function changes the color of the line only, path color should be set differently.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
@@ -271,7 +271,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5
 A total of 3 different line style is defined in the class, which are: `SolidLine`, `DotLine`, and `DashLine`. Each circle in the spiral progress bar can have anindependent style. the tuple passed contains the string of the style name with the specific order. Example:
 `spb_lineStyle(('SolidLine', 'DotLine', 'DashLine'))`
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
@@ -282,7 +282,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5
 Two different caps are available in this class: `RoundCap` and the `SquareCap`. the default is `RoundCap`. Users need to pass a tuple containing the cap name as a string to this function. Example:
 `spb_lineCap(('RoundCap', 'SquareCap', 'RoundCap'))`
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#5-line-color-style-cap-path-color)
 
 ***
 
@@ -292,7 +292,7 @@ See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#5
 
 The path as default is visible, but users can override this and make the path hidden.
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples#7-hidden-path)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples#7-hidden-path)
 
 ***
 
@@ -304,4 +304,4 @@ Path color is set independently from the line color. Path color is similar to li
 
 ***
 
-Also See: [SpiralProgressBar Examples](https://anjalp.github.io/PySide2extn/pages/examples/spbExamples)
+Also See: [SpiralProgressBar Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples)
