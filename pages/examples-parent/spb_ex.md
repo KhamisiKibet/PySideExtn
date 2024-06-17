@@ -334,8 +334,8 @@ self.spbN.setLineWidth(15)
 * **Line Color**: Function `setLineColor()` this function help one to change the color of the individual concentric progress bars. It takes a tuple as argument and each element of the tuple in the form of another tuple which itself has element of R, G and B. 
 
 ```python
-#LINE COLOR : ((R, G, B), (R, G, B), (R, G, B))
-colorTuple = ((0, 125, 125), (125, 0, 125), (125, 255, 0), (125, 125, 125))
+#LINE COLOR : (QColor, QColor, QColor)
+colorTuple = (QColor(0, 125, 125), QColor(125, 0, 125), QColor(125, 255, 0), (125, 125, 125))
 self.spbN.setLineColor(colorTuple)
 ```
 
