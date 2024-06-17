@@ -17,7 +17,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 x = 0
 p = 1
@@ -32,7 +32,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
         #CREATING THE SPIRAL PROGRESS BAR OBJECT
-        self.spb = spiralProgressBar()    
+        self.spb = SpiralProgressBar()    
         
         #ADDING WIDGETS TO THE VERTICAL LAYOUT
         self.layout = QtWidgets.QVBoxLayout()
@@ -72,13 +72,13 @@ if __name__ == "__main__":
 </p>
 
 
-- Here first create a spiralProgressBar object and then add the progress bar to a layout and control the steps of the progress bar by the clicking of the button. 
+- Here first create a SpiralProgressBar object and then add the progress bar to a layout and control the steps of the progress bar by the clicking of the button. 
 
   ```python
-  self.spb = spiralProgressBar()		
+  self.spb = SpiralProgressBar()		
   ```
 
-- Here we create a spiralProgressBar object instance and then use the `self.spb` as the spiral progress bar to influence its charactor like:
+- Here we create a SpiralProgressBar object instance and then use the `self.spb` as the spiral progress bar to influence its charactor like:
 
   ```python
   self.spb.spb_setValue((x, x*2, x*3))
@@ -100,7 +100,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -108,8 +108,8 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbMinMax = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbRange = spiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
+        self.spbMinMax = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbRange = SpiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
 
         #SPIRAL PROGRESS BAR spbMinMax : GREEN COLOR
         self.spbMinMax.spb_setMinimum((0, 0, 0))    #SETTING THE MINIMUM VALUE
@@ -145,8 +145,8 @@ This example demonstrate the use of the three function to manipulate the Maximum
 - In the code two spiral progress bar object instance is defined as:
 
   ```python
-  self.spbMinMax = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-  self.spbRange = spiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
+  self.spbMinMax = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+  self.spbRange = SpiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
   ```
 
 - Then set the maximum and minimum by the functions `spb_setMaximum()` and `spb_setMinimum()` for the instance `spbMinMax` . After that the 
@@ -179,7 +179,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -187,7 +187,7 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
         self.spbN.spb_setNoProgressBar(4)
         
         #SETING THE INITIAL POSITION OF THE PROGRESS BAR: FROM OUTER->INWARDS
@@ -236,7 +236,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -244,7 +244,7 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
         self.spbN.spb_setNoProgressBar(2)
         
         #SETING THE DIRECTION OF PROGRESS OF THE PROGRESS BAR: FROM OUTER-INWARDS
@@ -279,7 +279,7 @@ This function resets the default direction of rotation of progress, to user pref
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -287,7 +287,7 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
         self.spbN.spb_setNoProgressBar(4)
         
         #LINE WIDTH: 15px
@@ -361,7 +361,7 @@ self.spbN.spb_lineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.SpiralProgressBar import spiralProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -369,7 +369,7 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
         self.spbN.spb_lineWidth(15)
         
@@ -407,7 +407,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -415,7 +415,7 @@ class MyWidget(QtWidgets.QWidget):
 
         self.hello = 'Spiral Progress Bar'
         
-        self.spbN = spiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
+        self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
         #SET THE LINE WIDTH TO 15px
         self.spbN.spb_lineWidth(15)
