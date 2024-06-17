@@ -1,7 +1,7 @@
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySideExtn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.RoundProgressBar import RoundProgressBar #IMPORT THE EXTENSION LIBRARY
 
 x = 0
 p = 1
@@ -15,7 +15,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text = QtWidgets.QLabel("Round Progress Bar")
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
-        self.rpb = roundProgressBar()    #CREATING THE ROUND PROGRESS BAR OBJECT
+        self.rpb = RoundProgressBar()    #CREATING THE ROUND PROGRESS BAR OBJECT
         
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
@@ -33,7 +33,7 @@ class MyWidget(QtWidgets.QWidget):
             p = -1
         elif x==0:
             p = 1
-        self.rpb.rpb_setValue(x)        #CHANGING THE VALUE OF THE PROGRESS BAR
+        self.rpb.setValue(x)        #CHANGING THE VALUE OF THE PROGRESS BAR
         out_text = 'Round Progress Bar: ' + str(x) + '%'
         self.text.setText(out_text)
         
