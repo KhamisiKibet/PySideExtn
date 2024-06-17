@@ -112,10 +112,10 @@ class MyWidget(QtWidgets.QWidget):
         self.spbRange = SpiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
 
         #SPIRAL PROGRESS BAR spbMinMax : GREEN COLOR
-        self.spbMinMax.setMinimum((0, 0, 0))    #SETTING THE MINIMUM VALUE
-        self.spbMinMax.setMaximum((360, 360, 360))   #SETTING THE MAXIMUM VALUE 
+        self.spbMinMax.setMinimumValue((0, 0, 0))    #SETTING THE MINIMUM VALUE
+        self.spbMinMax.setMaximumValue((360, 360, 360))   #SETTING THE MAXIMUM VALUE 
         #GREEN COLOR
-        self.spbMinMax.lineColor(((0, 255, 0), (0, 255, 0), (0, 255, 0)))  
+        self.spbMinMax.setLineColor(((0, 255, 0), (0, 255, 0), (0, 255, 0)))  
         self.spbMinMax.setValue((300, 350, 289))    #SET THE CURRENT VALUE
         
         #SPIRAL PROGRESS BAR spbRange :BLUE COLOR
@@ -149,12 +149,12 @@ This example demonstrate the use of the three function to manipulate the Maximum
   self.spbRange = SpiralProgressBar()     #SPIRAL PROGRESS BAR OBJECT
   ```
 
-- Then set the maximum and minimum by the functions `setMaximum()` and `setMinimum()` for the instance `spbMinMax` . After that the 
+- Then set the maximum and minimum by the functions `setMaximumValue()` and `setMinimum()` for the instance `spbMinMax` . After that the 
 
   ```python
   #SPIRAL PROGRESS BAR spbMinMax : GREEN COLOR
-  self.spbMinMax.setMinimum((0, 0, 0))    #SETTING THE MINIMUM VALUE
-  self.spbMinMax.setMaximum((360, 360, 360))   #SETTING THE MAXIMUM VALUE   
+  self.spbMinMax.setMinimumValue((0, 0, 0))    #SETTING THE MINIMUM VALUE
+  self.spbMinMax.setMaximumValue((360, 360, 360))   #SETTING THE MAXIMUM VALUE   
   self.spbMinMax.setValue((300, 350, 289))    #SET THE CURRENT VALUE
   ```
 
@@ -188,7 +188,7 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = 'Spiral Progress Bar'
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbN.setNoProgressBar(4)
+        self.spbN.setNumberOfProgressBar(4)
         
         #SETING THE INITIAL POSITION OF THE PROGRESS BAR: FROM OUTER->INWARDS
         self.spbN.setInitialPos(('North', 'South', 'East', 'West'))
@@ -245,7 +245,7 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = 'Spiral Progress Bar'
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbN.setNoProgressBar(2)
+        self.spbN.setNumberOfProgressBar(2)
         
         #SETING THE DIRECTION OF PROGRESS OF THE PROGRESS BAR: FROM OUTER-INWARDS
         self.spbN.setDirection(('Clockwise', 'AntiClockwise'))
@@ -288,21 +288,21 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = 'Spiral Progress Bar'
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
-        self.spbN.setNoProgressBar(4)
+        self.spbN.setNumberOfProgressBar(4)
         
         #LINE WIDTH: 15px
-        self.spbN.lineWidth(15)
+        self.spbN.setLineWidth(15)
         self.spbN.setGap(17)
 
         #LINE COLOR
         colorTuple = ((0, 125, 125), (125, 0, 125), (125, 255, 0), (125, 125, 125))
-        self.spbN.lineColor(colorTuple)
+        self.spbN.setLineColor(colorTuple)
 
         #LINE STYLE
-        self.spbN.lineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
+        self.spbN.setLineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
 
         #LINE CAP
-        self.spbN.lineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
+        self.spbN.setLineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 
         self.spbN.setValue((55, 55, 55, 55))
 
@@ -324,33 +324,33 @@ if __name__ == "__main__":
 
 This example fully deals the customizability of the line element in the spiral progress bar. 
 
-* **Line Width**: Use the function `lineWidth()` for changing the width of the line. This function takes a integer as the argument: representing the line thickness in px.
+* **Line Width**: Use the function `setLineWidth()` for changing the width of the line. This function takes a integer as the argument: representing the line thickness in px.
 
 ```python
 #LINE WIDTH: 15px
-self.spbN.lineWidth(15)
+self.spbN.setLineWidth(15)
 ```
 
-* **Line Color**: Function `lineColor()` this function help one to change the color of the individual concentric progress bars. It takes a tuple as argument and each element of the tuple in the form of another tuple which itself has element of R, G and B. 
+* **Line Color**: Function `setLineColor()` this function help one to change the color of the individual concentric progress bars. It takes a tuple as argument and each element of the tuple in the form of another tuple which itself has element of R, G and B. 
 
 ```python
 #LINE COLOR : ((R, G, B), (R, G, B), (R, G, B))
 colorTuple = ((0, 125, 125), (125, 0, 125), (125, 255, 0), (125, 125, 125))
-self.spbN.lineColor(colorTuple)
+self.spbN.setLineColor(colorTuple)
 ```
 
 * **Line Style**: This function changes the style of the line, i.e. the line can have the following styles: `SolidLine`, `DotLine` and `DashLine`. The function takes a tuple as an argument with its elements as the string of the line style. As usual the order of elements in the tuple is important.
 
 ```python
 #LINE STYLE
-self.spbN.lineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
+self.spbN.setLineStyle(('SolidLine', 'DotLine', 'DashLine', 'SolidLine'))
 ```
 
-* **Line Cap**: Line cap defines the cap style of the line in the progress bar. It can be : `RoundCap` or a `Square Cap` . Cap of the line is defines by the function `lineCap()` . This function takes a single argument, a tuple with strings as the elements.
+* **Line Cap**: Line cap defines the cap style of the line in the progress bar. It can be : `RoundCap` or a `Square Cap` . Cap of the line is defines by the function `setLineCap()` . This function takes a single argument, a tuple with strings as the elements.
 
 ```python
 #LINE CAP
-self.spbN.lineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
+self.spbN.setLineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 ```
 
 ***
@@ -371,7 +371,7 @@ class MyWidget(QtWidgets.QWidget):
         
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
-        self.spbN.lineWidth(15)
+        self.spbN.setLineWidth(15)
         
         #VARIABLE WIDTH AND WIDTH INCREMENT
         self.spbN.variableWidth(True)
@@ -418,7 +418,7 @@ class MyWidget(QtWidgets.QWidget):
         self.spbN = SpiralProgressBar()    #SPIRAL PROGRESSBAR OBJECT
 
         #SET THE LINE WIDTH TO 15px
-        self.spbN.lineWidth(15)
+        self.spbN.setLineWidth(15)
         
         #HIDE THE PATH
         self.spbN.setPathHidden(True)
