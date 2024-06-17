@@ -8,7 +8,7 @@ permalink: /
 
 # **PySideExtn/PyQtExtn Documentation** 
 
-#### v1.0.0
+#### v2.0.0 and above
 
 {: .fs-5 }
 
