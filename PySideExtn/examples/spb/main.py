@@ -2,7 +2,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
-from PySideExtn.SpiralProgressBar import spiralProgressBar 
+from PySideExtn.SpiralProgressBar import SpiralProgressBar 
 
 x = 0
 p = 1
@@ -17,7 +17,7 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setAlignment(QtCore.Qt.AlignCenter)
         
         #CREATING THE SPIRAL PROGRESS BAR OBJECT
-        self.spb = spiralProgressBar()    
+        self.spb = SpiralProgressBar()    
         
         #ADDING WIDGETS TO THE VERTICAL LAYOUT
         self.layout = QtWidgets.QVBoxLayout()
@@ -39,7 +39,7 @@ class MyWidget(QtWidgets.QWidget):
             p = 1
             
         #CHANGING THE VALUE OF THE 3 DEFAULT PROGRESS BAR
-        self.spb.spb_setValue((x, x*2, x*3)) 
+        self.spb.setValue((x, x*2, x*3)) 
         
         out_text = 'Spiral Progress Bar: '  
         out_text = out_text + str(x) + '%, ' + str(2*x) + '%, ' + str(3*x) + '%'
