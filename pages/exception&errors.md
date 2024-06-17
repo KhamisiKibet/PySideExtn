@@ -27,10 +27,10 @@ Raised if the data type passed as an argument did not match the required. This e
 
 * **Wrong Data type Errors**
 
-Raised by **all the methods** of this class. Mainly due to wrong data type i.e. the method `spb_setValue()` takes a `tuple` as parameter, but if you passed a `int` it raises this error. Example
+Raised by **all the methods** of this class. Mainly due to wrong data type i.e. the method `setValue()` takes a `tuple` as parameter, but if you passed a `int` it raises this error. Example
 
 ```python
-self.spb_setValue(55)
+self.setValue(55)
 ```
 
  error raised:
@@ -40,8 +40,8 @@ Traceback (most recent call last):
   File "F:\Project\Major Projects\Project PySide2 Extensions\expt\SpiralProgressBar\exception.py", line 26, in <module>
     widget = MyWidget()
   File "F:\Project\Major Projects\Project PySide2 Extensions\expt\SpiralProgressBar\exception.py", line 18, in __init__
-    self.spbN.spb_setValue(55)
-  File "F:\Project\Major Projects\Project PySide2 Extensions\expt\SpiralProgressBar\SpiralProgressBar.py", line 202, in spb_setValue
+    self.spbN.setValue(55)
+  File "F:\Project\Major Projects\Project PySide2 Extensions\expt\SpiralProgressBar\SpiralProgressBar.py", line 202, in setValue
     raise Exception("Value should be a Tuple and not " + str(type(value)))
 Exception: Value should be a Tuple and not <class 'int'>
 [Finished in 0.6s]
