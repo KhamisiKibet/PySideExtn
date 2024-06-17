@@ -1,7 +1,7 @@
 #############################################################################################
 # CREATOR:  ANJAL.P                                                                         #
 # ON:       2020 NOV.                                                                       #
-# AIM:      To Extend the capability of the PySide2 and PyQt5 Python library with easy to   #
+# AIM:      To Extend the capability of the PySide6 and PyQt5 Python library with easy to   #
 #           use extension containing commonly used widgets which is not natively supported  #
 #           by the Qt Frame work (or atleast for Python version of Qt).                     #
 # VERSION:  v1.0.0                                                                          #
@@ -10,12 +10,12 @@
 #############################################################################################
 
 
-from PySide2.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject,
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject,
     QObject, QPoint, QRect, QSize, QTime, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter,
     QPixmap, QRadialGradient)
-from PySide2.QtWidgets import *
+from PySide6.QtWidgets import *
 
 from PySideExtn.RoundProgressBar import RoundProgressBar
 from PySideExtn.SpiralProgressBar import SpiralProgressBar
@@ -217,6 +217,7 @@ class Ui_MainWindow(object):
 
         self.spb2 = SpiralProgressBar(self.widget_3)
         self.spb2.setObjectName(u"spb2")
+        self.spb2.setMinimumSize(100, 100)
 
         self.gridLayout_4.addWidget(self.spb2, 0, 2, 4, 1)
 
@@ -371,22 +372,22 @@ class Ui_MainWindow(object):
 
 
         self.rpb2.setBarStyle("Line")
-        self.rpb2.setLineColor((0, 10, 15))
-        self.rpb2.setTextColor((0, 10, 15))
+        self.rpb2.setLineColor(QColor(0, 10, 15))
+        self.rpb2.setTextColor(QColor(0, 10, 15))
 
 
         self.rpb3.setBarStyle("Pie")
-        self.rpb3.setMaximum(360)
+        self.rpb3.setMaximumValue(360)
         self.rpb3.setTextFormat('Value')
-        self.rpb3.setTextColor((210, 240, 210))
-        self.rpb3.setPieColor((0, 125, 125))
+        self.rpb3.setTextColor(QColor(210, 240, 210))
+        self.rpb3.setPieColor(QColor(0, 125, 125))
 
 
         self.rpb4.setBarStyle("Pizza")
         self.rpb4.setRange(0, 200)
-        self.rpb4.setCircleColor((210, 100, 0))
-        self.rpb4.setLineColor((160, 50, 0))
-        self.rpb4.setTextColor((250, 250, 250))
+        self.rpb4.setCircleColor(QColor(210, 100, 0))
+        self.rpb4.setLineColor(QColor(160, 50, 0))
+        self.rpb4.setTextColor(QColor(250, 250, 250))
         self.rpb4.setCircleRatio(1)
 
 
@@ -395,9 +396,9 @@ class Ui_MainWindow(object):
         self.rpb5.setTextFormat('Value')
         self.rpb5.setPathWidth(2)
         self.rpb5.setLineWidth(8)
-        self.rpb5.setPathColor((100, 100, 100))
-        self.rpb5.setCircleColor((100, 100, 100))
-        self.rpb5.setTextColor((250, 250, 250))
+        self.rpb5.setPathColor(QColor(100, 100, 100))
+        self.rpb5.setCircleColor(QColor(100, 100, 100))
+        self.rpb5.setTextColor(QColor(250, 250, 250))
 
 
         self.rpb6.setBarStyle("Hybrid2")
@@ -408,8 +409,8 @@ class Ui_MainWindow(object):
 
 
         self.rpb7.setLineWidth(2)
-        self.rpb7.setLineColor((20, 20, 20))
-        self.rpb7.setMaximum(200)
+        self.rpb7.setLineColor(QColor(20, 20, 20))
+        self.rpb7.setMaximumValue(200)
         self.rpb7.enableText(False)
         self.rpb7.setPathWidth(8)
 
@@ -425,9 +426,9 @@ class Ui_MainWindow(object):
         self.vs2.valueChanged.connect(lambda: self.rpb7.setValue(self.vs2.value()))
 
 
-        self.b1.clicked.connect(lambda: self.rpb1.setLineColor((128, 40, 152)))
-        self.b2.clicked.connect(lambda: self.rpb8.setCircleColor((0, 192, 175)))
-        self.b5.clicked.connect(lambda: self.rpb6.setTextColor((0, 192, 175)))
+        self.b1.clicked.connect(lambda: self.rpb1.setLineColor(QColor(128, 40, 152)))
+        self.b2.clicked.connect(lambda: self.rpb8.setCircleColor(QColor(0, 192, 175)))
+        self.b5.clicked.connect(lambda: self.rpb6.setTextColor(QColor(0, 192, 175)))
         self.b3.clicked.connect(lambda: self.rpb3.setValue(0))
         self.b4.clicked.connect(lambda: self.rpb3.setValue(100))
         self.b6.clicked.connect(lambda: self.rpb5.setValue(0))
@@ -439,30 +440,44 @@ class Ui_MainWindow(object):
 
         self.spb1.setValue((82, 56, 5))
 
-        self.spb2.setNoProgressBar(2)
-        self.spb2.lineWidth(15)
+        self.spb2.setNumberOfProgressBar(2)
+        self.spb2.setLineWidth(15)
         self.spb2.setGap(18)
         self.spb2.setValue((65, 60))
-        self.spb2.lineColor(((28, 129, 196), (90, 193, 211)))
-        self.spb2.pathColor(((195, 225, 242), (208, 234, 244)))
+
+        # Define gradients for each color
+        gradient = QLinearGradient(0, 0, self.spb2.width(), self.spb2.height())
+        gradient.setColorAt(0, QColor(255, 0, 0))       # Bright red (RGB: 255, 0, 0)
+        gradient.setColorAt(1, QColor(255, 165, 0))     # Bright orange (RGB: 255, 165, 0)
+
+        gradient1 = QLinearGradient(0, 0, self.spb2.width(), self.spb2.height())
+        gradient1.setColorAt(0, QColor(0, 85, 170))    # Deep blue (RGB: 0, 85, 170)
+        gradient1.setColorAt(1, QColor(85, 170, 0))    # Vibrant green (RGB: 85, 170, 0)
+
+        gradient2 = QLinearGradient(0, 0, self.spb2.width(), self.spb2.height())
+        gradient2.setColorAt(0, QColor(208, 234, 244))  # Start color for gradient2
+        gradient2.setColorAt(1, QColor(195, 225, 242))  # End color for gradient2
+
+        self.spb2.setLineColor((gradient, gradient1))
+        self.spb2.setPathColor((QColor(195, 225, 242), QColor(208, 234, 244)))
 
         self.spb3.setRange((0, 0, 0), (360, 360, 360))
-        self.spb3.lineWidth(15)
+        self.spb3.setLineWidth(15)
         self.spb3.setGap(17)
         self.spb3.setInitialPos(('East', 'East', 'East'))
         self.spb3.setValue((246, 315, 198))
         self.spb3.setPathHidden(True)
 
-        self.spb4.setNoProgressBar(6)
-        self.spb4.lineWidth(10)
+        self.spb4.setNumberOfProgressBar(6)
+        self.spb4.setLineWidth(10)
         self.spb4.setGap(11)
         self.spb4.setValue((59, 16, 27, 65, 84, 95))
 
-        self.spb5.lineStyle(('DotLine', 'DotLine', 'DotLine'))
+        self.spb5.setLineStyle(('DotLine', 'DotLine', 'DotLine'))
         self.spb5.setValue((65, 90, 25))
 
-        self.spb6.setNoProgressBar(5)
-        self.spb6.lineWidth(10)
+        self.spb6.setNumberOfProgressBar(5)
+        self.spb6.setLineWidth(10)
         self.spb6.setGap(11)
         self.spb6.setDirection(('Clockwise', 'AntiClockwise', 'AntiClockwise', 'Clockwise', 'Clockwise'))
         self.spb6.setValue((65, 25, 86, 45, 75))
@@ -471,9 +486,9 @@ class Ui_MainWindow(object):
         self.spb7.variableWidth(True)
         self.spb7.widthIncrement(2)
         
-        self.spb8.lineWidth(8)
+        self.spb8.setLineWidth(8)
         self.spb8.setGap(9)
-        self.spb8.lineCap(('RoundCap', 'SquareCap', 'SquareCap'))
+        self.spb8.setLineCap(('RoundCap', 'SquareCap', 'SquareCap'))
         self.spb8.setValue((65, 23, 95))
 
         self.hs2.valueChanged.connect(lambda: self.spb1.setValue((self.hs2.value(), self.hs2.value()*1.5, self.hs2.value()*1.75)))
@@ -496,4 +511,7 @@ def main():
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+if __name__=="__main__":
+    main()
 

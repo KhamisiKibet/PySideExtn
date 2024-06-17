@@ -13,7 +13,7 @@
 
 from qtpy import QtWidgets, QtCore
 from qtpy.QtCore import Qt, QSize, QEvent, QRectF
-from qtpy.QtGui import QBrush, QColor, QPainter, QPen, QPaintEvent, QFont
+from qtpy.QtGui import QBrush, QColor, QPainter, QPen, QPaintEvent, QFont, QResizeEvent
 from qtpy.QtWidgets import QStyleOption, QStyle
 
 
@@ -41,7 +41,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         self.direction = self.rotationFlags.Clockwise
 
         self.textType = self.textFlags.Percentage
-        self.textColor = (0, 159, 227)
+        self.textColor = QColor(0, 159, 227)
         self.textWidth = self.Size/8
         self.textFont = 'Segoe UI'
         self.textValue = '12%'
@@ -56,14 +56,14 @@ class RoundProgressBar(QtWidgets.QWidget):
         self.lineStyle = self.lineStyleFlags.SolidLine
         self.lineCap = self.lineCapFlags.SquareCap
         self.lineColor = QColor(0, 159, 227)
-        self.pathColor = (218, 218, 218)
+        self.pathColor = QColor(218, 218, 218)
 
-        self.circleColor = (218, 218, 218)
+        self.circleColor = QColor(218, 218, 218)
         self.circleRatio = 0.8
         self.circlePosX = 0
         self.circlePosY = 0
 
-        self.pieColor = (200, 200, 200)
+        self.pieColor = QColor(200, 200, 200)
         self.pieRatio = 1
         self.piePosX = 0
         self.piePosY = 0
@@ -163,7 +163,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         Exception : Maximum and Minimum cannot be the Same
         """
         
-        if self.minimum==maximum:               #FOR AVOIDING DIVISION BY ZERO ERROR IN FUTURE
+        if self.minimum==minimum:               #FOR AVOIDING DIVISION BY ZERO ERROR IN FUTURE
             raise Exception("Maximum and Minimum cannot be the Same")
             return
         if self.minimum != minimum:
@@ -242,11 +242,11 @@ class RoundProgressBar(QtWidgets.QWidget):
         """
         
         if value >= self.maximum:
-            RoundProgressBar.convertInputValue(self, self.maximum)
+            self.convertInputValue(self.maximum)
         elif value < self.minimum:
-            RoundProgressBar.convertInputValue(self, self.minimum)
+            self.convertInputValue(self.minimum)
         else:
-            RoundProgressBar.convertInputValue(self, value)
+            self.convertInputValue(value)
         
         self._value =  value
         self.update()
@@ -265,7 +265,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         none
         """
         
-        RoundProgressBar.convertInputValue(self, self.minimum)
+        self.convertInputValue(self, self.minimum)
         self.update()
 
     def setGeometry(self, posX, posY):
@@ -316,7 +316,7 @@ class RoundProgressBar(QtWidgets.QWidget):
             self.lineWidth = width
             self.update()
 
-    def setLineColor(self, rgb):
+    def setLineColor(self, color: QColor):
         """
         Line Color of the progress bar.
         ...
@@ -324,7 +324,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         Parameters
         --------------
 
-        rgb: tuple: (R, G, B)
+        QColor: (R, G, B)
             Color is passed as a tuple of values for red, blue and green in the order: (R, G, B)
 
         Raises
@@ -332,14 +332,10 @@ class RoundProgressBar(QtWidgets.QWidget):
         Exception: Line Color accepts a tuple: (R, G, B).
         """
 
-        # if type(rgb)!=type(()):
-        #     raise Exception("Line Color accepts a tuple: (R, G, B).")
-        #     return
-        # if self.lineColor != rgb:
-        self.lineColor = QColor(rgb)
+        self.lineColor = color
         self.update()
 
-    def setPathColor(self, rgb):
+    def setPathColor(self, color: QColor):
         """
         Path Color settings.
         ...
@@ -347,7 +343,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         Parameters
         --------------
 
-        rgb: tuple: (R, G, B)
+        QColor: (R, G, B)
             Color is passed as a tuple of values for red, blue and green in the order: (R, G, B)
 
         Raises
@@ -355,12 +351,8 @@ class RoundProgressBar(QtWidgets.QWidget):
         Exception: Path Color accepts a tuple: (R, G, B).
         """
         
-        if type(rgb)!=type(()):
-            raise Exception("Path Color accepts a tuple: (R, G, B).")
-            return
-        if self.pathColor != rgb:
-            self.pathColor = rgb
-            self.update()
+        self.pathColor = color
+        self.update()
 
     def setPathWidth(self, width):
         """
@@ -489,7 +481,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         elif cap == 'RoundCap':
             self.lineCap = self.lineCapFlags.RoundCap
 
-    def setTextColor(self, rgb):
+    def setTextColor(self, color: QColor):
         """
         Text color of the text inside the progress bar
         ...
@@ -497,7 +489,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         Parameters
         --------------
 
-        rgb: tuple
+        QColor
             Color of the text in the format: (R, G, B)
 
         Raises
@@ -505,8 +497,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         none
         """
 
-        # if self.textColor != rgb:
-        self.textColor = rgb
+        self.textColor = color
         self.update()
 
     def setTextFont(self, font):
@@ -597,7 +588,7 @@ class RoundProgressBar(QtWidgets.QWidget):
             self.textWidth = width
             self.update()
 
-    def setCircleColor(self, rgb):
+    def setCircleColor(self, color: QColor):
         """
         Circle color fill inside the circle.
         ...
@@ -613,9 +604,8 @@ class RoundProgressBar(QtWidgets.QWidget):
         none
         """
 
-        if self.circleColor != rgb:
-            self.circleColor = rgb
-            self.update()
+        self.circleColor = color
+        self.update()
 
     def setCircleRatio(self, ratio):
         """
@@ -637,7 +627,7 @@ class RoundProgressBar(QtWidgets.QWidget):
             self.circleRatio = ratio
             self.update()
 
-    def setPieColor(self, rgb):
+    def setPieColor(self, color: QColor):
         """
         Pie color inside the fill.
         ...
@@ -653,9 +643,8 @@ class RoundProgressBar(QtWidgets.QWidget):
         none
         """
 
-        if self.pieColor != rgb:
-            self.pieColor = rgb
-            self.update()
+        self.pieColor = color
+        self.update()
 
     def setPieRatio(self, ratio):
         """
@@ -752,7 +741,7 @@ class RoundProgressBar(QtWidgets.QWidget):
 
 #------------------------------------------------------ENGINE: WHERE ALL THE REAL STUFF TAKE PLACE: WORKING OF THE ROUNDPROGRESSBA
 
-    def MinimumSize(self, dynamicMax, minimum, maximum):
+    def adjustMinimumSize(self, minimum):
         """
         Minimum size calculating code: Takes consideration of the width of the line/path/circle/pie and the user defined
         width and also the size of the frame/window of the application.
@@ -761,17 +750,11 @@ class RoundProgressBar(QtWidgets.QWidget):
 
         Height = self.height()
         Width = self.width()
-        if dynamicMax:
-            if Width >= Height and Height >= minimum[1]:
-                self.Size = Height
-            elif Width < Height and Width >= minimum[0]:
-                self.Size = Width
-        else:
-            if Width >= Height and Height <= maximum[1]:
-                self.Size = Height
-            elif Width < Height and Width <= maximum[0]:
-                self.Size = Width
-
+        if Width >= Height and Height >= minimum[1]:
+            self.Size = Height
+        elif Width < Height and Width >= minimum[0]:
+            self.Size = Width
+       
     def convertInputValue(self, value):
         """
         CONVERTS ANY INPUT VALUE TO THE 0*16-360*16 DEGREE REFERENCE OF THE QPainter.drawArc NEEDED.
@@ -780,7 +763,7 @@ class RoundProgressBar(QtWidgets.QWidget):
 
         self._value = ((value - self.minimum)/(self.maximum - self.minimum))*360*16
         self._value = self.direction*self._value
-        if self.textType==RoundProgressBar.textFlags.Percentage:
+        if self.textType==self.textFlags.Percentage:
             self.textValue = str(round(((value - self.minimum)/(self.maximum - self.minimum))*100)) + "%"
         else:
             self.textValue = str(value)
@@ -824,35 +807,35 @@ class RoundProgressBar(QtWidgets.QWidget):
 
         self.setMinimumSize(self.size())
 
-        RoundProgressBar.MinimumSize(self, self.dynamicMax, self.minimumSize, self.maximumSize)
-        RoundProgressBar.geometryFactor(self)
-        RoundProgressBar.textFactor(self)
-        RoundProgressBar.circleFactor(self)
-        RoundProgressBar.pieFactor(self)
+        self.adjustMinimumSize(self.minimumSize)
+        self.geometryFactor()
+        self.textFactor()
+        self.circleFactor()
+        self.pieFactor()
         
         if self.type==0: #DONET TYPE
-            RoundProgressBar.pathComponent(self)
-            RoundProgressBar.lineComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.pathComponent()
+            self.lineComponent()
+            self.textComponent()
         elif self.type==1: #LINE TYPE
-            RoundProgressBar.lineComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.lineComponent()
+            self.textComponent()
         elif self.type==2: #Pie
-            RoundProgressBar.pieComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.pieComponent()
+            self.textComponent()
         elif self.type==3: #PIZZA
-            RoundProgressBar.circleComponent(self)
-            RoundProgressBar.lineComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.circleComponent()
+            self.lineComponent()
+            self.textComponent()
         elif self.type==4: #HYBRID1
-            RoundProgressBar.circleComponent(self)
-            RoundProgressBar.pathComponent(self)
-            RoundProgressBar.lineComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.circleComponent()
+            self.pathComponent()
+            self.lineComponent()
+            self.textComponent()
         elif self.type==5: #HYBRID2
-            RoundProgressBar.pieComponent(self)
-            RoundProgressBar.lineComponent(self)
-            RoundProgressBar.textComponent(self)
+            self.pieComponent()
+            self.lineComponent()
+            self.textComponent()
 
         
     def lineComponent(self):
@@ -886,7 +869,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         penPath = QPen()
         penPath.setStyle(Qt.SolidLine)
         penPath.setWidth(self.pathWidth)
-        penPath.setBrush(QColor(self.pathColor[0], self.pathColor[1], self.pathColor[2]))
+        penPath.setBrush(self.pathColor)
         penPath.setCapStyle(Qt.RoundCap)
         penPath.setJoinStyle(Qt.RoundJoin)
         pathPainter.setPen(penPath)
@@ -897,7 +880,7 @@ class RoundProgressBar(QtWidgets.QWidget):
         if self.textActive:
             textPainter = QPainter(self)
             penText = QPen()
-            penText.setColor(QColor(self.textColor))
+            penText.setColor(self.textColor)
             textPainter.setPen(penText)
             fontText = QFont()
             fontText.setFamily(self.textFont)
@@ -910,18 +893,18 @@ class RoundProgressBar(QtWidgets.QWidget):
         circlePainter = QPainter(self)   
         penCircle = QPen()
         penCircle.setWidth(0)
-        penCircle.setColor(QColor(self.circleColor[0], self.circleColor[1], self.circleColor[2]))
+        penCircle.setColor(self.circleColor)
         circlePainter.setRenderHint(QPainter.Antialiasing)
         circlePainter.setPen(penCircle)
-        circlePainter.setBrush(QColor(self.circleColor[0], self.circleColor[1], self.circleColor[2]))
+        circlePainter.setBrush(self.circleColor)
         circlePainter.drawEllipse(self.circlePosX, self.circlePosY, (self.Size - self.sizeFactor)*self.circleRatio, (self.Size - self.sizeFactor)*self.circleRatio)
 
     def pieComponent(self):
         piePainter = QPainter(self)   
         penPie = QPen()
         penPie.setWidth(0)
-        penPie.setColor(QColor(self.pieColor[0], self.pieColor[1], self.pieColor[2]))
+        penPie.setColor(self.pieColor)
         piePainter.setRenderHint(QPainter.Antialiasing)
         piePainter.setPen(penPie)
-        piePainter.setBrush(QColor(self.pieColor[0], self.pieColor[1], self.pieColor[2]))
+        piePainter.setBrush(self.pieColor)
         piePainter.drawPie(self.piePosX, self.piePosY, (self.Size - self.sizeFactor)*self.pieRatio, (self.Size - self.sizeFactor)*self.pieRatio, self.startPosition, self._value)
