@@ -1,6 +1,6 @@
 # PySideExtn
 
-An extension for the Python PySide2 Qt Framework which expands the scope of the PySide2 package with many different modern widgets. Current release is occupied with two widget which are not natively present in the PySide2 package.
+An extension for the Python PySide2, PyQt5, PySide6 or PyQt6 Qt Framework which expands the scope of the PySide2, PyQt5, PySide6 or PyQt6 package with many different modern widgets. Current release is occupied with two widget which are not natively present in the PySide2, PyQt5, PySide6 or PyQt6 package.
 
 *RoundProgressBar*
 
@@ -14,7 +14,7 @@ An extension for the Python PySide2 Qt Framework which expands the scope of the 
   <img src="assets/spb.png">
 </p>
 
-:point_right: Go to [Home Page](https://anjalp.github.io/PySideExtn/) of Documentation for further Help
+Go to [Home Page](https://khamisikibet.github.io/PySideExtn/) of Documentation for further Help
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ pip install <PySideExtn------.whl>file
 
 To verify that installation is complete, print out the `pip list` and search for the PySideExtn package. 
 
-:point_right: For more details go to the [Official PySideExtn Documentation Getting Started](https://anjalp.github.io/PySideExtn/pages/get_started)
+For more details go to the [Official PySideExtn Documentation Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
 
 ## Quick Demo
 
@@ -59,21 +59,21 @@ After installing the PySideExtn/PyQt5extn the users can try out quick demo by:
 
 ## Documentation
 
-Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation](https://anjalp.github.io/PySideExtn/).
+Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation](https://khamisikibet.github.io/PySideExtn/).
 
-:point_right: [Getting Started](https://anjalp.github.io/PySideExtn/pages/get_started)
+[Getting Started](https://khamisikibet.github.io/PySideExtn/pages/get_started)
 
-:point_right: [Examples](https://anjalp.github.io/PySideExtn/pages/example)
+[Examples](https://khamisikibet.github.io/PySideExtn/pages/example)
 
-:point_right: [Classes](https://anjalp.github.io/PySideExtn/pages/classes)
+[Classes](https://khamisikibet.github.io/PySideExtn/pages/classes)
 
-:point_right: [Errors and Exceptions](https://anjalp.github.io/PySideExtn/pages/error&exception)
+[Errors and Exceptions](https://khamisikibet.github.io/PySideExtn/pages/error&exception)
 
-:point_right: [Version History](https://anjalp.github.io/PySideExtn/pages/version)
+[Version History](https://khamisikibet.github.io/PySideExtn/pages/version)
 
-:point_right: [FAQ's](https://anjalp.github.io/PySideExtn/pages/faqs)
+[FAQ's](https://khamisikibet.github.io/PySideExtn/pages/faqs)
 
-:point_right: [Official PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
+[Official PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Examples
 
@@ -81,7 +81,8 @@ Official Documentation for PySideExtn is detailed in: [PySideExtn Documentation]
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+# update this import
+from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -146,13 +147,14 @@ self.rpb.rpb_setValue(x) #CHANGING THE VALUE OF THE PROGRESS BAR
 
 The `rpb_setValue(value)` takes an `int` as an argument and updates to change the value of the progress bar to the value given.
 
-:point_right: For More examples on Round Progress Bar go to: [Official PySideExtn Documentation Examples](https://anjalp.github.io/PySideExtn/pages/examples/rpbExamples)
+For More examples on Round Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
 
 * **Default Spiral Progress Bar**
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+# update this import
+from PySide2, PyQt5, PySide6 or PyQt6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
 from PySideExtn.SpiralProgressBar import spiralProgressBar 
@@ -227,7 +229,7 @@ if __name__ == "__main__":
   <img src="assets/spb/spb_order.png">
 </p>
 
-:point_right: For More examples on Spiral Progress Bar go to: [Official PySideExtn Documentation Examples](https://anjalp.github.io/PySideExtn/pages/examples/spbExamples)
+For More examples on Spiral Progress Bar go to: [Official PySideExtn Documentation Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/spbExamples)
 
 ## Help
 
@@ -235,13 +237,9 @@ if __name__ == "__main__":
 - **Unknown errors**: Raise a GitHub issue or fill the official [PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA)
 
 ## Support
+- Please feel free to contribute to the project by sharing the idea you have, which is not natively present in the PySide2, PyQt5, PySide6 or PyQt6/PyQt5 but essential for your workflow.
 
-- Please feel free to contribute to the project by sharing the idea you have, which is not natively present in the PySide2/PyQt5 but essential for your workflow.
-- You can fill up the official [PySideExtn/PyQt5extn Form](https://forms.gle/yfKVK85sLLMJMCfJA) where you just Brief the idea you have and also provide an active email address which is required for us to connect you.
 - If your idea worth the use, then definitely it will be available in the next update of the PySideExtn/PyQt5extn.
-- If this package made your life easy, then please share your experience with us [Here](https://forms.gle/yfKVK85sLLMJMCfJA)
-
-:smiley: Support my work by forking or downloading this project, check it out, and [share the experience](https://forms.gle/yfKVK85sLLMJMCfJA).
 
 :smiley: Support like this motivates me to do more creative, work for Open Source.
 

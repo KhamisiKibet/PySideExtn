@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: PySideExtn
-Version: 2.0.0
+Version: 2.0.1
 Summary: PySideExtn is an open-source Python programming language extension designed to empower PySide2/6 users with an expanded toolkit. This extension enriches the PySide2/6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.
 Home-page: https://github.com/KhamisiKibet/PySideExtn
 Author: ANJAL.P. Improved by Khamisi Kibet
@@ -17,6 +17,7 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: qtpy
 
 # PySideExtn
 

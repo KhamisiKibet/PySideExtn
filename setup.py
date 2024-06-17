@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="PySideExtn", # Replace with your own username
-    version="2.0.0",
+    version="2.0.1",
     author="ANJAL.P. Improved by Khamisi Kibet",
     author_email="spinncompany@gmail.com",
-    description="PySideExtn is an open-source Python programming language extension designed to empower PySide2/6 users with an expanded toolkit. This extension enriches the PySide2/6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.",
+    description="PySideExtn is an open-source Python programming language extension designed to empower PySide2, PyQt5, PySide6 or PyQt6 users with an expanded toolkit. This extension enriches the PySide2, PyQt5, PySide6 or PyQt6 library by introducing a range of additional widgets and features, significantly enhancing its capabilities and versatility.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KhamisiKibet/PySideExtn",
