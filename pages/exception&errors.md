@@ -7,7 +7,7 @@ permalink: /pages/error&exception
 
 # Errors and Exceptions
 
-PySide2extn Library uses specific style for parameters passed to the methods. So its is common for the users to get errors due to wrong data type of info passed. So there are certain Specific Exception and ValueErrors raised. Below is the list of such Exceptions and their Reasons:
+PySideExtn Library uses specific style for parameters passed to the methods. So its is common for the users to get errors due to wrong data type of info passed. So there are certain Specific Exception and ValueErrors raised. Below is the list of such Exceptions and their Reasons:
 
 
 
