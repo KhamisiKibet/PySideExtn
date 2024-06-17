@@ -16,7 +16,7 @@ These Example codes are written using the PySide2 Python Package, but the same c
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from PySide2extn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
+from PySideExtn.RoundProgressBar import roundProgressBar #IMPORT THE EXTENSION LIBRARY
 
 x = 0
 p = 1
@@ -90,7 +90,7 @@ The `rpb_setValue(value)` takes an `int` as an argument and updates to change th
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -166,7 +166,7 @@ Example:
 ```python
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -236,7 +236,7 @@ object.rpb_setPieColor((R, G, B)) #ARGUMENT RGB AS A TUPLE
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE PACKAGE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -286,7 +286,7 @@ if __name__ == "__main__":
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -331,7 +331,7 @@ if __name__ == "__main__":
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -441,7 +441,7 @@ self.rpb3.rpb_enableText(False) #SEE THE IMAGE OF 3RD ROUNDPROGRESSBAR
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -528,7 +528,7 @@ import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
 #IMPORTING THE MODULE
-from PySide2extn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import roundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -592,5 +592,5 @@ self.rpb2.rpb_setPathColor((0, 0, 0))   #BLACK COLOR
 
 ***
 
-Also See: [Class RoundProgressBar](https://anjalp.github.io/PySide2extn/pages/class/rpbClass)
+Also See: [Class RoundProgressBar](https://khamisikibet.github.io/PySideExtn/pages/class/rpbClass)
 
