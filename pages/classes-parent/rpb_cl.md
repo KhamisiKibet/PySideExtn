@@ -72,7 +72,7 @@ You can specify the minimum and maximum number of steps with `rpb_setMinimum()` 
 
 ### Naming Convention 
 
-As the PySide2/PyQt5 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use custom name for the methods in the RoundProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So  to modify the round progress bar style, text, color, etc each time, the method name has to be called with a **prefix of `rpb_`** . So the idea remains the same, eg: that if you want to set the maximum value of progress bar, call the method `rpb_setMaximum()` and pass the maximum as an argument. This method applies to all other method used in this class.
+As the PySide2/PyQt5/PySide6/PyQt6 library is so big and most of the common name is occupied by the various methods in the class, I was limited to use custom name for the methods in the RoundProgressBar class, so I decided to go for a **prefix at the beginning** of each method name so that it is easy to remember. So  to modify the round progress bar style, text, color, etc each time, the method name has to be called with a **prefix of `rpb_`** . So the idea remains the same, eg: that if you want to set the maximum value of progress bar, call the method `rpb_setMaximum()` and pass the maximum as an argument. This method applies to all other method used in this class.
 
 The Round Progress Bar Consist of **5 parts**: **Text**, **Line**, **Path**, **Circle** and **Pie**. Each of this can be modified individually in terms of color, size etc.
 
@@ -108,7 +108,7 @@ During the first round progress bar creation you will see a round progress bar w
 
 As seen each of the above property and much more can be changes, refer below:
 
-See: [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples)
+See: [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
 
 ## Class roundProgressBar()
 
@@ -169,7 +169,7 @@ Set the round progress bar minimum value to `min`.
 
 By default the minimum value is 0.
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
 
 ***
 
@@ -181,7 +181,7 @@ Set the round progress bar minimum value to `max`.
 
 By default the maximum value is 100.
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
 
 ***
 
@@ -193,7 +193,7 @@ Sets the minimum and maximum range of the round progress bar.
 
 By default the range is (0, 100)
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#2-minimum-maximum-and-range)
 
 ***
 
@@ -219,7 +219,7 @@ Output:
   <img src="../assets/rpb/south.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#5-starting-position)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#5-starting-position)
 
 
 ***
@@ -293,7 +293,7 @@ self.rpb.rpb_setLineColor((255, 0, 0)) #CHANGING THE LINE COLOR TO RED
   <img src="../assets/rpb/linecolor.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
 
 
 ***
@@ -313,7 +313,7 @@ self.rpb.rpb_setPathWidth(15)
   <img src="../assets/rpb/pathwidth.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#9-path-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#9-path-properties)
 
 
 ***
@@ -335,7 +335,7 @@ self.rpb.rpb_setPathColor((0, 0, 0)) #CHANGING THE PATH COLOR TO BLACK
   <img src="../assets/rpb/pathcolor.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
 
 
 ***
@@ -352,7 +352,7 @@ By default the direction is `Clockwise`
   <img src="../assets/rpb/rpb_dir.png">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#6-direction-of-progress)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#6-direction-of-progress)
 
 
 ***
@@ -382,7 +382,7 @@ Output:
   <img src="../assets/rpb/pizza.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#3-changing-the-progress-bar-style)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#3-changing-the-progress-bar-style)
 
 
 ***
@@ -405,7 +405,7 @@ By Default the line cap is set to `SquareCap`.
 self.rpb.rpb_setLineCap('RoundCap')
 ```
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#8-line-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#8-line-properties)
 
 ***
 
@@ -434,7 +434,7 @@ self.rpb.rpb_setLineStyle('DashLine')
   <img src="../assets/rpb/dashline.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#8-line-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#8-line-properties)
 
 
 ***
@@ -454,7 +454,7 @@ self.rpb.rpb_setTextColor((255, 220, 0)) #SETTING THE COLOR TO YELLOW
   <img src="../assets/rpb/textcolor.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
 
 
 ***
@@ -474,7 +474,7 @@ self.rpb.rpb_setTextFont('Times')
   <img src="../assets/rpb/font.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#7-text-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#7-text-properties)
 
 
 ***
@@ -509,7 +509,7 @@ self.rpb.rpb_setValue(180)
 
 See the above example where we set the maximum value of the progress bar to 360, making the range from 0 to 360, then set the value to 180, we can see when the text format is in `Value` it displays 180 on the other hand when the text format is `Percentage` it shows as 50%.
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#7-text-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#7-text-properties)
 
 ***
 
@@ -528,7 +528,7 @@ self.rpb.rpb_setTextRatio(3) #SET THE TEXT SIZE TO 1/3 OF SIZE OF THE ROUND PROG
   <img src="../assets/rpb/rpb_fifty.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#7-text-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#7-text-properties)
 
 
 ***
@@ -550,7 +550,7 @@ self.rpb.rpb_setTextWidth(30)
 
 Remember that the using rpb_setTextRatio() enables the dynamic text, which makes the text size change with respect to the change in size of the round progress bar, but the method rpb_setTextWidth() disables the dynamic text feature and makes the constant text size, with no effect in the change in size of the round progress bar.
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#7-text-properties)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#7-text-properties)
 
 ***
 
@@ -572,7 +572,7 @@ self.rpb.rpb_setCircleColor((200, 120, 20)) #CHANGE THE COLOR
   <img src="../assets/rpb/circlecolor.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
 
 
 ***
@@ -614,7 +614,7 @@ self.rpb.rpb_setValue(45)
   <img src="../assets/rpb/pie.PNG">
 </p>
 
-See [Example](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
+See [Example](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples#4-change-the-progress-bar-colors)
 
 
 ***
@@ -680,4 +680,4 @@ This method returns the width of the text displaying the value in the round prog
 
 ***
 
-Also See: [Round Progress Bar Examples](https://anjalp.github.io/PySide2extn/pages/examples/rpbExamples)
+Also See: [Round Progress Bar Examples](https://khamisikibet.github.io/PySideExtn/pages/examples/rpbExamples)
