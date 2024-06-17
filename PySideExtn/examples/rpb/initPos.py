@@ -1,15 +1,15 @@
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySideExtn.RoundProgressBar import roundProgressBar
+from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
 
-        self.rpb = roundProgressBar()
-        self.rpb2 = roundProgressBar()
-        self.rpb.rpb_setInitialPos('South')
-        self.rpb2.rpb_setInitialPos('East')
+        self.rpb = RoundProgressBar()
+        self.rpb2 = RoundProgressBar()
+        self.rpb.setInitialPos('South')
+        self.rpb2.setInitialPos('East')
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addWidget(self.rpb)
