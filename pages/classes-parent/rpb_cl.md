@@ -119,7 +119,7 @@ By default: This gives us a `Donet` type of round progress bar with minimum and 
 ```python
 #INITIALISING A NEW ROUND PROGRESS BAR
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 from PySide2exnt.RoundProgressBar import RoundProgressBar #IMPORT THE MODULES
 
 class MyWidget(QtWidgets.QWidget):

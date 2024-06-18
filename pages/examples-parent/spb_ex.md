@@ -14,7 +14,7 @@ These Example codes are written using the PySide2 Python Package, but the same c
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION  LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 
@@ -176,7 +176,7 @@ This example demonstrate the use of the three function to manipulate the Maximum
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 
@@ -233,7 +233,7 @@ if __name__ == "__main__":
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 
@@ -277,7 +277,7 @@ This function resets the default direction of rotation of progress, to user pref
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -359,7 +359,7 @@ self.spbN.setLineCap(('SquareCap', 'RoundCap', 'RoundCap', 'SquareCap'))
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.SpiralProgressBar import SpiralProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -404,7 +404,7 @@ The function `variableWidth()` helps one to create a variable width of the line/
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORT THE EXTENSION LIBRARY
 from PySideExtn.SpiralProgressBar import SpiralProgressBar 

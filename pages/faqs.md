@@ -45,7 +45,7 @@ permalink: /pages/faqs
 
 10. Does this python package works only with PySide2?
 
-    No. The documentation is fully written for the PySide2 python package, but all the methods/customization and all other things *works exactly the same for the PyQt5 Python package.* The only exception is that the imports should be from the PyQt5 and not from PySide2. 
+    No. The documentation is fully written for the PySide2 python package, but all the methods/customization and all other things *works exactly the same for the PyQt5 Python package.* The only exception is that the imports should be from the PyQt5 and not from PySide6. 
 
     
 

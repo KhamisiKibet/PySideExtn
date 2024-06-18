@@ -14,7 +14,7 @@ These Example codes are written using the PySide2 Python Package, but the same c
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 from PySideExtn.RoundProgressBar import RoundProgressBar #IMPORT THE EXTENSION LIBRARY
 
@@ -88,7 +88,7 @@ The `setValue(value)` takes an `int` as an argument and updates to change the va
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -165,7 +165,7 @@ Example:
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
 class MyWidget(QtWidgets.QWidget):
@@ -234,7 +234,7 @@ object.setPieColor(QColor) #ARGUMENT QColor
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE PACKAGE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -284,7 +284,7 @@ if __name__ == "__main__":
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -329,7 +329,7 @@ if __name__ == "__main__":
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -439,7 +439,7 @@ self.rpb3.enableText(False) #SEE THE IMAGE OF 3RD ROUNDPROGRESSBAR
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar
 
@@ -525,7 +525,7 @@ self.rpb2.setLineStyle('DashLine')
 
 ```python
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 
 #IMPORTING THE MODULE
 from PySideExtn.RoundProgressBar import RoundProgressBar

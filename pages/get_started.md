@@ -103,10 +103,10 @@ Many a time designing a GUI is better done using the inbuild QtDesigner as it gr
   ```python
   import sys
   
-  from PySide2 import QtCore, QtGui, QtWidgets
-  from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-  from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient, QPen)
-  from PySide2.QtWidgets import *
+  from PySide6 import QtCore, QtGui, QtWidgets
+  from PySide6.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+  from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient, QPen)
+  from PySide6.QtWidgets import *
   
   #IMPORT PYSIDEEXTN WIDGET YOU USED IN THE QTDESIGNER FOR DESIGNING.
   from PySideExtn.RoundProgressBar import RoundProgressBar
