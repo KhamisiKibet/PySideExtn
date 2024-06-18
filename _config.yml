@@ -1,63 +1,68 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
 # Site settings
-title: "PySideExtn/PyQtExtn Documentation"
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: PySideExtn/PyQtExtn Documentation
 logo: "/favicon.ico"
-email: "spinncompany@gmail.com"
-description: "Documentation for PySideExtn/PyQtExtn by Khamisi Kibet"
+email: spinncompany@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Documentation for PySideExtn/PyQtExtn by khamisi Kibet
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: "https://github.com/KhamisiKibet"
+github_username:  https://github.com/KhamisiKibet
 
 # Build settings
-theme: "minimal-mistakes-jekyll"
+#theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-remote-theme
+# color_scheme: "mpi"
 
-# Navigation links
-nav:
-  - title: "Home"
-    url: "/"
-  - title: "GitHub"
-    url: "https://github.com/KhamisiKibet/PySideExtn"
-  - title: "YouTube"
-    url: "https://youtube.com/spinntv"
+aux_links:
+  "PySideExtn/PyQtExtn in Github":
+    - "https://github.com/KhamisiKibet/PySideExtn"
+  
+  "YouTube":
+    - "https://youtube.com/spinntv"
 
-# Social links
-author:
-  name: "Khamisi Kibet"
-  avatar: "/assets/images/avatar.png"
-  links:
-    - label: "Email"
-      url: "mailto:spinncompany@gmail.com"
-    - label: "GitHub"
-      url: "https://github.com/KhamisiKibet"
-    - label: "YouTube"
-      url: "https://youtube.com/spinntv"
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
 
-# Footer content
-footer:
-  content: "Copyright &copy; 2024"
+footer_content: "Copyright &copy; 2024"
 
-# Exclude from processing
-exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-# Theme settings
-minimal_mistakes_skin: "default"
-show_author: true
-social_links:
-  - name: "GitHub"
-    url: "https://github.com/KhamisiKibet"
-  - name: "YouTube"
-    url: "https://youtube.com/spinntv"
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
