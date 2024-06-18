@@ -2,17 +2,10 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.1.1"
 
-# Remove the default minima theme
-# gem "minima", "~> 2.5"
-
-# Add Minimal Mistakes theme
-gem "minimal-mistakes-jekyll"
-
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# Uncomment the following line to use GitHub Pages
 # gem "github-pages", group: :jekyll_plugins
 
-# If you have any plugins, put them here!
+# Plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-sitemap"
