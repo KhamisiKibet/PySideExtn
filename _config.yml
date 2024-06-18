@@ -32,7 +32,7 @@ github_username:  https://github.com/KhamisiKibet
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
-color_scheme: "mpi"
+# color_scheme: "mpi"
 
 aux_links:
   "PySideExtn/PyQtExtn in Github":
