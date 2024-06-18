@@ -8,11 +8,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: "https://github.com/KhamisiKibet"
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes"
+theme: "minimal-mistakes-jekyll"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Navigation links
 nav:
@@ -54,8 +55,6 @@ exclude:
 
 # Theme settings
 minimal_mistakes_skin: "default"
-header: 
-  image: "/assets/images/header.png"
 show_author: true
 social_links:
   - name: "GitHub"
