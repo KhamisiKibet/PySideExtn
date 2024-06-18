@@ -8,23 +8,36 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: "https://github.com/KhamisiKibet"
 
 # Build settings
-remote_theme: "pmarsceill/just-the-docs"
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Auxiliary links
-aux_links:
-  "PySideExtn/PyQtExtn in Github":
-    - "https://github.com/KhamisiKibet/PySideExtn"
-  "YouTube":
-    - "https://youtube.com/spinntv"
+# Navigation links
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "GitHub"
+    url: "https://github.com/KhamisiKibet/PySideExtn"
+  - title: "YouTube"
+    url: "https://youtube.com/spinntv"
 
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
+# Social links
+author:
+  name: "Khamisi Kibet"
+  avatar: "/assets/images/avatar.png"
+  links:
+    - label: "Email"
+      url: "mailto:spinncompany@gmail.com"
+    - label: "GitHub"
+      url: "https://github.com/KhamisiKibet"
+    - label: "YouTube"
+      url: "https://youtube.com/spinntv"
 
 # Footer content
-footer_content: "Copyright &copy; 2024"
+footer:
+  content: "Copyright &copy; 2024"
 
 # Exclude from processing
 exclude:
@@ -40,42 +53,12 @@ exclude:
   - vendor/ruby/
 
 # Theme settings
-just_the_docs:
-  # Color scheme for the theme
-  color_scheme: "light"
-
-  # Specify the default order of the navigation links
-  default_order:
-    - "Home"
-    - "Documentation"
-    - "About"
-  
-  # Site logo
-  logo:
-    - path: "/assets/logo.png"
-      alt: "Logo"
-  
-  # Search settings
-  search_enabled: true
-  search:
-    search_placeholder: "Search..."
-    show_shortcut: true
-    shortcut: "/"
-
-  # Navigation links
-  nav:
-    - title: "Home"
-      url: "/"
-    - title: "GitHub"
-      url: "https://github.com/KhamisiKibet/PySideExtn"
-    - title: "YouTube"
-      url: "https://youtube.com/spinntv"
-
-  # Social links
-  social_links:
-    - title: "Email"
-      url: "mailto:spinncompany@gmail.com"
-    - title: "GitHub"
-      url: "https://github.com/KhamisiKibet"
-    - title: "YouTube"
-      url: "https://youtube.com/spinntv"
+minimal_mistakes_skin: "default"
+header: 
+  image: "/assets/images/header.png"
+show_author: true
+social_links:
+  - name: "GitHub"
+    url: "https://github.com/KhamisiKibet"
+  - name: "YouTube"
+    url: "https://youtube.com/spinntv"
